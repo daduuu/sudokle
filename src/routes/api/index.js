@@ -1,7 +1,7 @@
 "use strict";
 
-const textBoxes = require("./sudokleQueries");
+const sudokleQueries = require("./sudokleQueries");
 
 module.exports.register = async server => {
-    await textBoxes.register(server)
+    await sudokleQueries.register(server)
 };
