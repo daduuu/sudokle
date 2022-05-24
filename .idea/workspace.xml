@@ -1,11 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="67af0b21-39b3-4b24-a2dd-953b5d029f79" name="Default Changelist" comment="" />
+    <list default="true" id="67af0b21-39b3-4b24-a2dd-953b5d029f79" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="ProjectId" id="29b7vZgH7ewoUmhKvToStqyIx2U" />
   <component name="ProjectViewState">
@@ -19,7 +29,11 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/data" />
       <recent name="$PROJECT_DIR$/src" />
     </key>
   </component>
@@ -51,5 +65,11 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1034" y="433" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1653412039947">
+      <screen x="0" y="25" width="2048" height="1255" />
+    </state>
+    <state x="1034" y="433" key="#com.intellij.fileTypes.FileTypeChooser/0.25.2048.1255@0.25.2048.1255" timestamp="1653412039947" />
   </component>
 </project>

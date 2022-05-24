@@ -10,13 +10,13 @@ module.exports.register = async server => {
     const sqlQueries = await utils.loadSqlQueries("sudokleQueries");
 
 
+
     server.route({
 
         method: "GET",
-        path: "/api/sudokleQueries",
+        path: "/api/sudokleQueries/getLeaderboardInfo",
 
         handler: function (request, h) {
-
             try {
                 const connection = sql.createConnection({
                     host: config.sql.server,
@@ -32,7 +32,50 @@ module.exports.register = async server => {
 
 
                 return new Promise((resolve, reject) => {
-                    connection.query(sqlQueries.getTextBoxes, function (error, results, fields) {
+                    connection.query(sqlQueries.getLeaderboardInfo, function (error, results, fields) {
+                        if (error) {
+                            console.log(error);
+                            return reject(error)
+                        }
+
+                        console.log(results);
+
+                        return resolve(results);
+                    });
+                    connection.end();
+
+                });
+
+            } catch (err) {
+                console.log(err);
+            }
+
+        }
+
+    });
+
+    server.route({
+
+        method: "GET",
+        path: "/api/sudokleQueries/getDailySudokuGrid",
+
+        handler: function (request, h) {
+            try {
+                const connection = sql.createConnection({
+                    host: config.sql.server,
+                    port: config.sql.port,
+                    user: config.sql.user,
+                    password: config.sql.password,
+                    database: config.sql.user
+                });
+
+                connection.on('error', function (err) {
+                    console.log(err);
+                });
+
+
+                return new Promise((resolve, reject) => {
+                    connection.query(sqlQueries.getDailySudokuGrid, function (error, results, fields) {
                         if (error) {
                             return reject(error)
                         }
@@ -79,4 +122,6 @@ module.exports.register = async server => {
 
         }
     });
+
+
 }
