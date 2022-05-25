@@ -25,8 +25,10 @@ class App extends Component {
 
   getRows(){
     const rows = [];
+    var count = 1;
     for(const user of this.state.leaderBoardData){
-      rows.push(<tr key={user.userID}><td>{user.userEmail}</td><td>{user.dailyPuzzleTimedSolved}</td></tr>)
+      rows.push(<tr key={user.userID}><td>Rank: {count}</td><td>{user.userEmail}</td><td>{user.dailyPuzzleTimedSolved}</td></tr>)
+      count++;
     }
     return rows;
   }
@@ -41,6 +43,7 @@ class App extends Component {
                 <table>
                   <thead>
                     <tr>
+                      <th>Rank</th>
                       <th>Email</th>
                       <th>Daily Time Solve</th>
                     </tr>

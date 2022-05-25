@@ -2,11 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="67af0b21-39b3-4b24-a2dd-953b5d029f79" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sudokle.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sudokleNew.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/sudokleQueries/addDailySudokuGrid.sql" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/data/sudokleQueries/getLeaderboardInfo.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/sudokleQueries/getLeaderboardInfo.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/api/sudokleQueries.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/api/sudokleQueries.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sudokle/node_modules/.cache/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/sudokle/node_modules/.cache/.eslintcache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sudokle/node_modules/.cache/default-development/10.pack" beforeDir="false" afterPath="$PROJECT_DIR$/sudokle/node_modules/.cache/default-development/10.pack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sudokle/node_modules/.cache/default-development/6.pack" beforeDir="false" afterPath="$PROJECT_DIR$/sudokle/node_modules/.cache/default-development/6.pack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sudokle/node_modules/.cache/default-development/9.pack" beforeDir="false" afterPath="$PROJECT_DIR$/sudokle/node_modules/.cache/default-development/9.pack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sudokle/node_modules/.cache/default-development/index.pack" beforeDir="false" afterPath="$PROJECT_DIR$/sudokle/node_modules/.cache/default-development/index.pack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sudokle/node_modules/.cache/default-development/index.pack.old" beforeDir="false" afterPath="$PROJECT_DIR$/sudokle/node_modules/.cache/default-development/index.pack.old" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sudokle/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/sudokle/src/App.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -35,6 +43,9 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -69,6 +80,7 @@
       <updated>1653370162851</updated>
       <workItem from="1653370163984" duration="289000" />
       <workItem from="1653432164109" duration="3763000" />
+      <workItem from="1653437978663" duration="194000" />
     </task>
     <servers />
   </component>
