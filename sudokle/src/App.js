@@ -1,12 +1,20 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { NEWDATE } from 'mysql/lib/protocol/constants/types';
 
 
 class App extends Component {
-  state = {
-    leaderBoardData: []
-  };
+  constructor(props){
+    super(props);
+    this.state = {
+      leaderBoardData: [],
+      timeStarted: new Date().getTime(),
+      timeFinished: 0,
+	  timeTaken: 0,
+    };
+    this.brian = this.brian.bind(this);
+  }
 
   componentDidMount() {
     this.fetchData()
@@ -32,8 +40,16 @@ class App extends Component {
     }
     return rows;
   }
-
+  brian(){
+	const timeFinished = new Date().getTime();
+    this.setState({
+      ...this.state,
+      timeFinished,
+	  timeTaken: (timeFinished-this.state.timeStarted)/1000,
+    });
+  }
   render() {
+
     const rows = this.getRows();
 
     return (
@@ -45,7 +61,7 @@ class App extends Component {
                     <tr>
                       <th>Rank</th>
                       <th>Email</th>
-                      <th>Daily Time Solve</th>
+                      <th onClick={this.brian}>Daily Time Solve</th>
                     </tr>
                   </thead>
                   <tbody>
