@@ -6,7 +6,7 @@ const Layout = () => {
             <nav>
                 <ul>
                     <li>
-                        <Link to="/">Daily Leaderboard</Link>
+                        <Link to="/DailyLeaderBoard">Daily Leaderboard</Link>
                     </li>
                     <li>
                         <Link to="/WeeklyLeaderboard">Weekly Leaderboard</Link>

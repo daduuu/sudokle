@@ -2,32 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="67af0b21-39b3-4b24-a2dd-953b5d029f79" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/data/sudokleQueries/getWeeklyLeaderboardInfo.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sudokle/src/Layout.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sudokle/src/WeeklyLeaderboard.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/api/sudokleQueries.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/api/sudokleQueries.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sudokle/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/sudokle/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sudokle/node_modules/.cache/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/sudokle/node_modules/.cache/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sudokle/node_modules/.cache/default-development/0.pack" beforeDir="false" afterPath="$PROJECT_DIR$/sudokle/node_modules/.cache/default-development/0.pack" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sudokle/node_modules/.cache/default-development/1.pack" beforeDir="false" afterPath="$PROJECT_DIR$/sudokle/node_modules/.cache/default-development/1.pack" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sudokle/node_modules/.cache/default-development/2.pack" beforeDir="false" afterPath="$PROJECT_DIR$/sudokle/node_modules/.cache/default-development/2.pack" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sudokle/node_modules/.cache/default-development/3.pack" beforeDir="false" afterPath="$PROJECT_DIR$/sudokle/node_modules/.cache/default-development/3.pack" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sudokle/node_modules/.cache/default-development/4.pack" beforeDir="false" afterPath="$PROJECT_DIR$/sudokle/node_modules/.cache/default-development/4.pack" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sudokle/node_modules/.cache/default-development/5.pack" beforeDir="false" afterPath="$PROJECT_DIR$/sudokle/node_modules/.cache/default-development/5.pack" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sudokle/node_modules/.cache/default-development/6.pack" beforeDir="false" afterPath="$PROJECT_DIR$/sudokle/node_modules/.cache/default-development/6.pack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sudokle/node_modules/.cache/default-development/7.pack" beforeDir="false" afterPath="$PROJECT_DIR$/sudokle/node_modules/.cache/default-development/7.pack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sudokle/node_modules/.cache/default-development/8.pack" beforeDir="false" afterPath="$PROJECT_DIR$/sudokle/node_modules/.cache/default-development/8.pack" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sudokle/node_modules/.cache/default-development/index.pack" beforeDir="false" afterPath="$PROJECT_DIR$/sudokle/node_modules/.cache/default-development/index.pack" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sudokle/node_modules/.cache/default-development/index.pack.old" beforeDir="false" afterPath="$PROJECT_DIR$/sudokle/node_modules/.cache/default-development/index.pack.old" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sudokle/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/sudokle/node_modules/.package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sudokle/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/sudokle/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sudokle/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/sudokle/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sudokle/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/sudokle/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/game.html" beforeDir="false" afterPath="$PROJECT_DIR$/sudokle/views/game.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/leaderboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/sudokle/views/leaderboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sudokle/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/sudokle/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sudokle/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/sudokle/src/DailyLeaderBoard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sudokle/src/App.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/sudokle/src/App.test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sudokle/src/Layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/sudokle/src/Layout.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +87,7 @@
       <workItem from="1653370163984" duration="289000" />
       <workItem from="1653432164109" duration="3763000" />
       <workItem from="1653437978663" duration="696000" />
-      <workItem from="1653448468379" duration="3769000" />
+      <workItem from="1653448468379" duration="4757000" />
     </task>
     <servers />
   </component>
