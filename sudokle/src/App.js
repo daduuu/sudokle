@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { NEWDATE } from 'mysql/lib/protocol/constants/types';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import google from './google.png'
 
 class App extends Component {
   constructor(props){
@@ -12,8 +13,9 @@ class App extends Component {
       timeStarted: new Date().getTime(),
       timeFinished: 0,
 	  timeTaken: 0,
+	  bestTime: [0],
     };
-    this.brian = this.brian.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   componentDidMount() {
@@ -40,12 +42,22 @@ class App extends Component {
     }
     return rows;
   }
-  brian(){
-	const timeFinished = new Date().getTime();
+  handleClick(){
+	const timeFinished = !this.state.timeFinished? new Date().getTime() : this.state.timeFinished;
+	const timeTaken = (timeFinished-this.state.timeStarted)/1000
+	let bestTime = this.state.bestTime;
+	if(bestTime.length > 1){
+		if(timeFinished < this.state.bestTime[1])
+			bestTime[1] = timeTaken;
+	}
+	else{
+		bestTime.push(timeTaken);
+	}
     this.setState({
       ...this.state,
       timeFinished,
-	  timeTaken: (timeFinished-this.state.timeStarted)/1000,
+	  timeTaken,
+	  bestTime: bestTime,
     });
   }
   render() {
@@ -53,21 +65,24 @@ class App extends Component {
     const rows = this.getRows();
 
     return (
-        <div className="App">
+        <div className="App jumbotron">
+          <button id="googlebtn">
+              <div>
+                <img src={google} id='googlogo'></img>
+                <p>Sign in with Google</p>
+              </div>
+            </button>
           <header className="App-header">
-            <h1>Daily Leaderboard</h1>
-                <table>
-                  <thead>
-                    <tr>
-                      <th>Rank</th>
-                      <th>Email</th>
-                      <th onClick={this.brian}>Daily Time Solve</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {rows}
-                  </tbody>
-                </table>
+            <h1 id="title">Sudokle</h1>
+            <table>
+              <thead>
+                <tr>
+                  <button id="playbtn">
+                    Play
+                  </button>
+                </tr>
+              </thead>
+            </table>
           </header>
         </div>
     );

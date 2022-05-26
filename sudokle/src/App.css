@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Roboto:wght@500&display=swap');
+
+
+
 .App {
   text-align: center;
 }
@@ -22,8 +26,53 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-}
+  font-family: Poppins;
 
+  
+}
+.App-header h1{
+  letter-spacing: 0.7rem;
+}
+button{
+	transition: 0.15s ease-in-out;
+	font-family: Poppins;
+}
+button:hover{
+	cursor: pointer;
+	transform: scale(1.1);
+	transition: 0.15s ease-in-out;
+}
+#googlebtn{
+	position: absolute;
+	top: 3vh;
+	right: 2vw;
+	padding: 0.5em 1.5em 0.5em 1em;
+	font-family: Roboto;
+	font-size: calc(10px + vmin);
+	background-color: #282c34;
+	border-right-color: #219ad3;
+	border-left-color: #E5AC00;
+	border-top-color:#D73B29;
+	border-bottom-color: #1ad14b;
+	border-radius: calc(3vmin);
+	border-width: calc(0.5vh);
+	color: white;
+}
+#googlogo{
+	width: 3vh;
+	margin-right: 1vw;
+}
+#googlebtn div{
+	display: flex;
+	align-items: center;
+}
+#playbtn{
+	padding: 1em;
+	font-size: calc(10px + vmin);
+	border-radius: 1vmin;
+	width: 9vh;
+	text-align: center;
+}
 .App-link {
   color: #61dafb;
 }
