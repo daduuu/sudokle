@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import ReactDOM from "react-dom/client";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Layout from "./Layout";
+import Home from "./Home"
+import WeeklyLeaderboard from "./WeeklyLeaderboard";
 
 
 class App extends Component {
@@ -39,6 +44,15 @@ class App extends Component {
     return (
         <div className="App">
           <header className="App-header">
+            <BrowserRouter>
+              <Routes>
+                <Route path="/" element={<Layout />}>
+                  <Route index element={<Home />} />
+                  <Route path="WeeklyLeaderboard" element={<WeeklyLeaderboard />} />
+                </Route>
+              </Routes>
+            </BrowserRouter>
+
             <h1>Daily Leaderboard</h1>
                 <table>
                   <thead>

@@ -8,6 +8,8 @@ const startServer = async() => {
     try{
         const app = await server(config);
 
+
+
         await app.start();
 
         console.log(`Server running at https://${config.host}:${config.port}...`);
