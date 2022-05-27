@@ -3,22 +3,56 @@ import logo from './logo.svg';
 import './App.css';
 import { NEWDATE } from 'mysql/lib/protocol/constants/types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import google from './google.png'
+import googleimg from './google.png'
+import { useEffect, useState } from 'react';
+import jwt_decode from "jwt-decode";
 
 class App extends Component {
   constructor(props){
     super(props);
     this.state = {
+      user: null,
       leaderBoardData: [],
       timeStarted: new Date().getTime(),
-      timeFinished: 0,
-	  timeTaken: 0,
-	  bestTime: [0],
+      timeTaken: 0,
     };
     this.handleClick = this.handleClick.bind(this);
   }
 
+
+  handleCallbackResponse = (response) => {
+		console.log("Encoded token" + response.credential);
+		var userObject = jwt_decode(response.credential);
+		console.log(userObject);
+    this.setState({
+      ...this.state,
+      user: userObject,
+    });
+		document.getElementById("signInDiv").hidden = true;
+	}
+
+	handleSignOut = () => {
+		this.setState({
+      ...this.state,
+      user: [],
+    })
+		document.getElementById("signInDiv").hidden = false;
+	}
+
+  
   componentDidMount() {
+    /* global google */
+    google.accounts.id.initialize({
+			client_id: "1097344085485-1nnqi4bhqte2ah3ek71g4325rpnojmtk.apps.googleusercontent.com",
+			callback: this.handleCallbackResponse
+		});
+
+		google.accounts.id.renderButton(
+			document.getElementById("signInDiv"),
+			{ theme: "", size: ""}
+		);
+
+		google.accounts.id.prompt();
     this.fetchData()
         .then(res => this.setState({
           leaderBoardData: res
@@ -61,17 +95,22 @@ class App extends Component {
     });
   }
   render() {
-
     const rows = this.getRows();
-
+    const user = this.state.user;
     return (
-        <div className="App jumbotron">
-          <button id="googlebtn">
-              <div>
-                <img src={google} id='googlogo'></img>
-                <p>Sign in with Google</p>
+        <div className="App">
+          <div id="topbar">
+            <div id="signInDiv"></div>
+            { this.state.user && 
+              <button id="googlebtn" onClick={ (e) => this.handleSignOut()}>Sign Out</button>
+            }
+            { user &&
+              <div id="userinfo">
+                <img id="pfp" src={user.picture}></img>
+                <h3 id="name">{user.name}</h3>
               </div>
-            </button>
+            }
+          </div>
           <header className="App-header">
             <h1 id="title">Sudokle</h1>
             <table>

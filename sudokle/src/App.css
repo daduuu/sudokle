@@ -73,6 +73,28 @@ button:hover{
 	width: 9vh;
 	text-align: center;
 }
+#topbar{
+	max-height: 10vh;
+}
+
+#userinfo{
+	display: flex;
+	align-items: center;
+	margin: auto;
+	font-family: Poppins;
+	white-space: nowrap;
+}
+#pfp{
+	display: inline-block;
+	max-height: 5vh;
+}
+#name{
+	display: inline-block;
+	margin-top: 0;
+}
+
+
+
 .App-link {
   color: #61dafb;
 }
