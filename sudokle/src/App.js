@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
@@ -60,19 +61,32 @@ class App extends Component {
         //.then(res => console.log(res))
         .catch(err => console.log(err));
   }
+=======
+import {BrowserRouter, Route, Routes} from "react-router-dom";
+import Layout from "./Layout";
+import Home from "./Home";
+import WeeklyLeaderboard from "./WeeklyLeaderboard";
+import React, {Component} from "react";
+import DailyLeaderBoard from "./DailyLeaderBoard";
 
-  fetchData = async () => {
-    const response = await fetch('/api/sudokleQueries/getLeaderboardInfo');
-    const body = response.json();
-    return body;
-  };
 
-  getRows(){
-    const rows = [];
-    var count = 1;
-    for(const user of this.state.leaderBoardData){
-      rows.push(<tr key={user.userID}><td>Rank: {count}</td><td>{user.userEmail}</td><td>{user.dailyPuzzleTimedSolved}</td></tr>)
-      count++;
+
+class App extends Component {
+
+    render() {
+>>>>>>> eff9be580c348d930942e3f12a382d22344912fb
+
+        return (
+            <BrowserRouter>
+                <Routes>
+                    <Route path="/" element={<Layout/>}>
+                        <Route index element={<Home/>} />
+                        <Route path="DailyLeaderboard" element={<DailyLeaderBoard/>} />
+                        <Route path="WeeklyLeaderboard" element={<WeeklyLeaderboard/>} />
+                    </Route>
+                </Routes>
+            </BrowserRouter>
+        );
     }
     return rows;
   }

@@ -5,6 +5,7 @@ const path = require("path");
 const inert = require('@hapi/inert');
 
 
+
 module.exports.register = async server => {
 
     await api.register(server);
@@ -13,10 +14,10 @@ module.exports.register = async server => {
         method:"GET",
         path:"/",
         handler: async (request, h) => {
-            return h.file('./views/game.html');
+            return h.view("./sudokle/src/DailyLeaderBoard.js");
         }
     });
-
+/*
 
     server.route({
         method:"GET",
@@ -25,6 +26,6 @@ module.exports.register = async server => {
             return h.file('./views/leaderboard.html');
         }
     });
-
+*/
 
 };
