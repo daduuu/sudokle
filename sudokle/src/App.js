@@ -99,18 +99,26 @@ class App extends Component {
     const user = this.state.user;
     return (
         <div className="App">
-          <div id="topbar">
-            <div id="signInDiv"></div>
-            { this.state.user && 
-              <button id="googlebtn" onClick={ (e) => this.handleSignOut()}>Sign Out</button>
-            }
-            { user &&
-              <div id="userinfo">
-                <img id="pfp" src={user.picture}></img>
-                <h3 id="name">{user.name}</h3>
-              </div>
-            }
+          <div id="navBar">
+              <div id="signInDiv"></div>
+              { this.state.user && 
+                <div id="googlebtncontainer">
+                  <button id="googlebtn" onClick={ (e) => this.handleSignOut()}>Sign Out</button>
+                </div>
+              }
+              { user &&
+                <div id="userinfo">
+                  <img id="pfp" src={user.picture}></img>
+                  <h3 id="name">{user.name}</h3>
+                </div>
+              }
+              { user &&
+                <div id="Leaderboard">
+                  <button id="leaderbtn">Leaderboard</button>
+                </div>
+              }
           </div>
+
           <header className="App-header">
             <h1 id="title">Sudokle</h1>
             <table>

@@ -43,9 +43,7 @@ button:hover{
 	transition: 0.15s ease-in-out;
 }
 #googlebtn{
-	position: absolute;
-	top: 3vh;
-	right: 2vw;
+
 	padding: 0.5em 1.5em 0.5em 1em;
 	font-family: Roboto;
 	font-size: calc(10px + vmin);
@@ -55,7 +53,7 @@ button:hover{
 	border-top-color:#D73B29;
 	border-bottom-color: #1ad14b;
 	border-radius: calc(3vmin);
-	border-width: calc(0.5vh);
+	border-width: calc(0.3vh);
 	color: white;
 }
 #googlogo{
@@ -66,6 +64,17 @@ button:hover{
 	display: flex;
 	align-items: center;
 }
+#leaderbtn{
+	position: absolute;
+	left: 5vw;
+	top: 50%;
+	transform: translateY(-50%);
+	border-radius: 1vw;
+	background-color: #282c34;
+	color: white;
+	border-color: cornflowerblue;
+	padding: calc(1vmin);
+}
 #playbtn{
 	padding: 1em;
 	font-size: calc(10px + vmin);
@@ -73,17 +82,38 @@ button:hover{
 	width: 9vh;
 	text-align: center;
 }
-#topbar{
-	max-height: 10vh;
+#navBar{
+	position: relative;
+	top: 0;
+	height: 7vh;
+	background-color: #282c34;
+	border-bottom: 1px solid rgb(0, 255, 0);
+}
+#googlebtncontainer{
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	right: 2vw;
 }
 
 #userinfo{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translateX(-50%) translateY(-50%);
 	display: flex;
 	align-items: center;
 	margin: auto;
 	font-family: Poppins;
 	white-space: nowrap;
+	color: white;
 }
+#userinfo h3{
+	margin: auto;
+	margin-left: 2vw;
+	letter-spacing: 0.1em;
+}
+
 #pfp{
 	display: inline-block;
 	max-height: 5vh;
