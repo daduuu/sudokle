@@ -30,6 +30,12 @@
 
   
 }
+#signInDiv{
+	position: absolute;
+	top: 50%;
+	left: 2vh;
+	transform: translateY(-50%);
+}
 .App-header h1{
   letter-spacing: 0.7rem;
 }

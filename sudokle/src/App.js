@@ -1,12 +1,15 @@
-<<<<<<< HEAD
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { NEWDATE } from 'mysql/lib/protocol/constants/types';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import googleimg from './google.png'
 import { useEffect, useState } from 'react';
 import jwt_decode from "jwt-decode";
+import {BrowserRouter, Route, Routes} from "react-router-dom";
+import Layout from "./Layout";
+import Home from "./Home";
+import WeeklyLeaderboard from "./WeeklyLeaderboard";
+import DailyLeaderBoard from "./DailyLeaderBoard";
 
 class App extends Component {
   constructor(props){
@@ -17,7 +20,6 @@ class App extends Component {
       timeStarted: new Date().getTime(),
       timeTaken: 0,
     };
-    this.handleClick = this.handleClick.bind(this);
   }
 
 
@@ -30,6 +32,7 @@ class App extends Component {
       user: userObject,
     });
 		document.getElementById("signInDiv").hidden = true;
+    document.getElementById("Leaderboard").hidden = false;
 	}
 
 	handleSignOut = () => {
@@ -38,6 +41,7 @@ class App extends Component {
       user: [],
     })
 		document.getElementById("signInDiv").hidden = false;
+    document.getElementById("Leaderboard").hidden = true;
 	}
 
   
@@ -61,32 +65,19 @@ class App extends Component {
         //.then(res => console.log(res))
         .catch(err => console.log(err));
   }
-=======
-import {BrowserRouter, Route, Routes} from "react-router-dom";
-import Layout from "./Layout";
-import Home from "./Home";
-import WeeklyLeaderboard from "./WeeklyLeaderboard";
-import React, {Component} from "react";
-import DailyLeaderBoard from "./DailyLeaderBoard";
 
+  fetchData = async () => {
+    const response = await fetch('/api/sudokleQueries/getLeaderboardInfo');
+    const body = response.json();
+    return body;
+  };
 
-
-class App extends Component {
-
-    render() {
->>>>>>> eff9be580c348d930942e3f12a382d22344912fb
-
-        return (
-            <BrowserRouter>
-                <Routes>
-                    <Route path="/" element={<Layout/>}>
-                        <Route index element={<Home/>} />
-                        <Route path="DailyLeaderboard" element={<DailyLeaderBoard/>} />
-                        <Route path="WeeklyLeaderboard" element={<WeeklyLeaderboard/>} />
-                    </Route>
-                </Routes>
-            </BrowserRouter>
-        );
+  getRows(){
+    const rows = [];
+    var count = 1;
+    for(const user of this.state.leaderBoardData){
+      rows.push(<tr key={user.userID}><td>Rank: {count}</td><td>{user.userEmail}</td><td>{user.dailyPuzzleTimedSolved}</td></tr>)
+      count++;
     }
     return rows;
   }
@@ -126,7 +117,7 @@ class App extends Component {
                   <h3 id="name">{user.name}</h3>
                 </div>
               }
-              { user &&
+              { this.state.user &&
                 <div id="Leaderboard">
                   <button id="leaderbtn">Leaderboard</button>
                 </div>
@@ -145,6 +136,15 @@ class App extends Component {
               </thead>
             </table>
           </header>
+          <BrowserRouter>
+                <Routes>
+                    <Route path="/" element={<Layout/>}>
+                        <Route index element={<Home/>} />
+                        <Route path="DailyLeaderboard" element={<DailyLeaderBoard/>} />
+                        <Route path="WeeklyLeaderboard" element={<WeeklyLeaderboard/>} />
+                    </Route>
+                </Routes>
+            </BrowserRouter>
         </div>
     );
   }
