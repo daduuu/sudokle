@@ -70,16 +70,35 @@ button:hover{
 	display: flex;
 	align-items: center;
 }
-#leaderbtn{
+
+#links{
 	position: absolute;
-	left: 5vw;
 	top: 50%;
+	left: 1%;
 	transform: translateY(-50%);
+	max-width: 50%;
+	border-collapse: separate;
+	border-spacing: 50px 0;
+}
+
+#home, #dailyleader, #weeklyleader{
 	border-radius: 1vw;
 	background-color: #282c34;
-	color: white;
-	border-color: cornflowerblue;
+	border-color: rgb(11, 202, 228);
 	padding: calc(1vmin);
+	min-width: 10vw;
+}
+#home{
+	left: 2vw;
+}
+#dailyleader{
+	left: 15vw;
+}
+#dailyleader a, #weeklyleader a, #home a{
+	color: white;
+}
+#weeklyleader{
+	left: 28vw;
 }
 #playbtn{
 	padding: 1em;
@@ -104,7 +123,7 @@ button:hover{
 
 #userinfo{
 	position: absolute;
-	left: 50%;
+	left: 85%;
 	top: 50%;
 	transform: translateX(-50%) translateY(-50%);
 	display: flex;
@@ -114,6 +133,8 @@ button:hover{
 	white-space: nowrap;
 	color: white;
 }
+
+
 #userinfo h3{
 	margin: auto;
 	margin-left: 2vw;
