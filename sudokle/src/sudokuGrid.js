@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
+import './SudokuGrid.css';
 
 class Grid extends React.Component {
     constructor(props){
@@ -90,5 +90,4 @@ class SudokuGrid extends React.Component {
   
   // ========================================
   
-  const root = ReactDOM.createRoot(document.getElementById("root"));
-  root.render(<SudokuGrid />);
+ export default SudokuGrid;
