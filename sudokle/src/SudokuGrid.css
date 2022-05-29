@@ -1,9 +1,11 @@
-body {
+.game {
     font: 14px "Century Gothic", Futura, sans-serif;
     margin: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
+    /* display: flex;
+    flex-direction: row; */
   }
   
   ol, ul {
@@ -20,11 +22,6 @@ body {
     margin-bottom: 4vh;
     text-align: center;
 
-  }
-  
-  .game {
-    display: flex;
-    flex-direction: row;
   }
   
   .game-info {
@@ -44,4 +41,20 @@ body {
     text-align: center;
     width: 2em;
     z-index: 5;
+  }
+  .top{
+      border-top-color: black !important;
+      border-top-width: 0.6vh;
+  }
+  .bot{
+    border-bottom-color: black !important;
+    border-bottom-width: 0.6vh;
+  }
+  .lside{
+    border-left-color: black !important;
+    border-left-width: 0.6vh;
+  }
+  .rside{
+    border-right-color: black !important;
+    border-right-width: 0.6vh;
   }

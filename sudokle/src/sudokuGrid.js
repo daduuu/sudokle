@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './SudokuGrid.css';
+import classNames from 'classnames'
 
 class Grid extends React.Component {
     constructor(props){
@@ -40,14 +41,19 @@ class Grid extends React.Component {
         event.target.value = this.state.squares[event.target.name];
       }
     };
-    
-    renderSquare(i) {
-        return <input type="text" class="one" name={i} onChange={this.getInputValue} />
-    }
+
     renderRow(i){
       const row = [];
+      let numSquares = 9;
       for(let c=i; c<i+9; c++){
-        row.push(<input type="text" class="one" name={c} onChange={this.getInputValue} />);
+        var liClasses = classNames({
+            'one': true,
+            'top': i===0 || i===3*numSquares || i===6*numSquares,
+            'bot': i===(numSquares-1)*numSquares,
+            'lside': c===0 || c%numSquares===0 || c%numSquares===3 || c%numSquares===6,
+            'rside': c%(numSquares)===(numSquares-1),
+        });
+        row.push(<input type="text" className={liClasses} name={c} onChange={this.getInputValue} />);
       }
       return row;
     }
