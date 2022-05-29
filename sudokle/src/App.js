@@ -4,6 +4,7 @@ import Home from "./Home";
 import WeeklyLeaderboard from "./WeeklyLeaderboard";
 import React, {Component} from "react";
 import DailyLeaderBoard from "./DailyLeaderBoard";
+import SudokuGrid from "./SudokuGrid";
 
 
 
@@ -18,6 +19,7 @@ class App extends Component {
                         <Route index element={<Home/>} />
                         <Route path="DailyLeaderboard" element={<DailyLeaderBoard/>} />
                         <Route path="WeeklyLeaderboard" element={<WeeklyLeaderboard/>} />
+                        <Route path="Play" element={<SudokuGrid/>} />
                     </Route>
                 </Routes>
             </BrowserRouter>

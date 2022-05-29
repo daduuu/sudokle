@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 
- class Board extends React.Component {
+class Grid extends React.Component {
     constructor(props){
         super(props);
         this.state = {
@@ -72,12 +72,12 @@ import './index.css';
     }
   }
   
-  class Game extends React.Component {
+class SudokuGrid extends React.Component {
     render() {
       return (
         <div className="game">
           <div className="game-board">
-            <Board />
+            <Grid/>
           </div>
           <div className="game-info">
             <div>{/* status */}</div>
@@ -91,4 +91,4 @@ import './index.css';
   // ========================================
   
   const root = ReactDOM.createRoot(document.getElementById("root"));
-  root.render(<Game />);
+  root.render(<SudokuGrid />);
