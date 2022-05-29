@@ -58,3 +58,6 @@
     border-right-color: black !important;
     border-right-width: 0.6vh;
   }
+  .given{
+    background-color: greenyellow !important;
+  }

@@ -6,8 +6,11 @@ import classNames from 'classnames'
 class Grid extends React.Component {
     constructor(props){
         super(props);
+        const ogiven = Array(81).fill(null); //fill this with elliot's numbers
+        //ogiven[1] = 8;  //set the first row second column number to 8, unchangeable by the user
         this.state = {
             squares: Array(81).fill(null),
+            given: ogiven,
         };
     }
 
@@ -30,9 +33,13 @@ class Grid extends React.Component {
       const re = /^[0-9]$/;
       //const back = /""/;
       //const re = /^[^a-zA-z!@#$%^&*()_=+`~]$/;
-      if(re.test(event.target.value)){
+      const index = parseInt(event.target.name);
+      const input = event.target.value;
+      let validSpot = (this.state.given[index] === null);
+      //console.log(this.state.given[1]);
+      if(re.test(input) && validSpot){
         const squares = this.state.squares.slice();
-        squares[parseInt(event.target.name)] = event.target.value;
+        squares[index] = input;
         this.setState({squares: squares,
         });
       }
@@ -52,8 +59,9 @@ class Grid extends React.Component {
             'bot': i===(numSquares-1)*numSquares,
             'lside': c===0 || c%numSquares===0 || c%numSquares===3 || c%numSquares===6,
             'rside': c%(numSquares)===(numSquares-1),
+            'given': this.state.given[c] != null,
         });
-        row.push(<input type="text" className={liClasses} name={c} onChange={this.getInputValue} />);
+        row.push(<input type="text" className={liClasses} name={c} value={this.state.given[c]} onChange={this.getInputValue} />);
       }
       return row;
     }
