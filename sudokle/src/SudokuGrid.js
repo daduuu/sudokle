@@ -12,10 +12,51 @@ class Grid extends React.Component {
             given: "",
             valSpots: [],
             sol: "",
-            solved: false
+            solved: false,
+            time: {
+                h: 0,
+                m: 0,
+                s: 0
+            },
+            seconds: 0
         };
+        this.timer = 0;
+        this.startTimer = this.startTimer.bind(this);
+        this.countUp = this.countUp.bind(this);
     }
 
+    secondsToTime(secs){
+        let hours = Math.floor(secs / (60 * 60));
+
+        let dm = secs % (60 * 60);
+        let minutes = Math.floor(dm / 60);
+
+        let ds = dm % 60;
+        let seconds = Math.ceil(ds);
+
+        let obj = {
+            h: hours,
+            m: minutes,
+            s: seconds
+        };
+        return obj;
+    }
+
+    startTimer() {
+        if (this.timer === 0) {
+            this.timer = setInterval(this.countUp, 1000);
+        }
+    }
+
+    countUp() {
+        let seconds = this.state.seconds + 1;
+
+        this.setState({
+            time: this.secondsToTime(seconds),
+            seconds: seconds,
+        });
+
+    }
 
     componentDidMount() {
 
@@ -45,15 +86,18 @@ class Grid extends React.Component {
                     given: puzzles,
                     valSpots: val,
                     sol: solution,
-                    solved: false
+                    solved: false,
+                    time: {
+                        h: 0,
+                        m: 0,
+                        s: 0
+                    }
                 });
 
 
             })
             //.then(res => console.log(res))
             .catch(err => console.log(err));
-
-
 
     }
 
@@ -76,6 +120,9 @@ class Grid extends React.Component {
     }
 
     getInputValue = (event)=>{
+        if(this.state.seconds === 0){
+            this.startTimer();
+        }
         //let the input field change only if it's being changed to a number 0-9
         const re = /[1-9]/;
         //const back = /[\b]/;
@@ -137,6 +184,9 @@ class Grid extends React.Component {
             <div>
                 <div className="status">{status}</div>
                 {this.renderGrid()}
+                <div className="timer">
+                    <p>m: {this.state.time.m} s: {this.state.time.s}</p>
+                </div>
             </div>
         );
     }
@@ -149,6 +199,7 @@ class SudokuGrid extends React.Component {
                 <div className="game-board">
                     <Grid/>
                 </div>
+
             </div>
         );
     }
