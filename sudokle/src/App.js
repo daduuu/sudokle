@@ -1,10 +1,11 @@
-import {BrowserRouter, Route, Routes} from "react-router-dom";
+import {BrowserRouter, Link, NavLink, Route, Routes} from "react-router-dom";
 import Layout from "./Layout";
 import Home from "./Home";
 import WeeklyLeaderboard from "./WeeklyLeaderboard";
 import React, {Component} from "react";
 import jwt_decode from "jwt-decode";
 import DailyLeaderBoard from "./DailyLeaderBoard";
+import SudokuGrid from "./SudokuGrid";
 
 
 
@@ -14,7 +15,6 @@ class App extends Component {
         this.state = {
             user: null,
             value: '',
-            leaderBoardData: [],
             timeStarted: new Date().getTime(),
             timeTaken: 0,
         };
@@ -30,6 +30,7 @@ class App extends Component {
             ...this.state,
             user: userObject,
         });
+        this.props.parentCallback(this.state.user);
         //after signing in, hide the sign in button and show the other features
         document.getElementById("signInDiv").hidden = true;
         var list = document.getElementsByClassName("signinrequired");
@@ -37,6 +38,7 @@ class App extends Component {
         for(var x = 0; x < list.length; x++){
             list.item(x).hidden = false;
         }
+
     }
 
     handleSignOut = () => {
@@ -68,12 +70,31 @@ class App extends Component {
 
         google.accounts.id.prompt();
     }
+    handleClick(){
+        const timeFinished = !this.state.timeFinished? new Date().getTime() : this.state.timeFinished;
+        const timeTaken = (timeFinished-this.state.timeStarted)/1000
+        let bestTime = this.state.bestTime;
+        if(bestTime.length > 1){
+            if(timeFinished < this.state.bestTime[1])
+                bestTime[1] = timeTaken;
+        }
+        else{
+            bestTime.push(timeTaken);
+        }
+        this.setState({
+            ...this.state,
+            timeFinished,
+            timeTaken,
+            bestTime: bestTime,
+        });
+    }
 
 
 
     handleChange(event) {
         this.setState({value: event.target.value});
     }
+
 
     createUser = async(event) => {
         event.preventDefault();
@@ -90,11 +111,8 @@ class App extends Component {
             console.log(e);
         }
     };
-   // " 7  2  46 6    89 2  8  715 84 97   71     59   13 48 697  2  8 58    6 43  8  7 "
 
     render() {
-
-
         return (
             <div>
                 <BrowserRouter>
@@ -103,8 +121,65 @@ class App extends Component {
                             <Route index element={<Home/>} />
                             <Route path="DailyLeaderboard" element={<DailyLeaderBoard/>} />
                             <Route path="WeeklyLeaderboard" element={<WeeklyLeaderboard/>} />
+                            <Route path="SudokuGrid" element={<SudokuGrid/>} />
                         </Route>
                     </Routes>
+
+                    <div className="App">
+                        <div id="navBar">
+                            <div id="signInDiv"></div>
+                            <table id="links">
+                                <tbody>
+                                <tr>
+                                    <th>
+                                        {this.state.user &&
+                                        <div id="Home" >
+                                            <button id="home" className="signinrequired">
+                                                <NavLink to="/">
+                                                    Home
+                                                </NavLink>
+                                            </button>
+                                        </div>
+                                        }
+                                    </th>
+                                    <td>
+                                        {this.state.user &&
+                                        <div id="Daily Leaderboard" className="signinrequired">
+                                            <button id="dailyleader">
+                                                <Link to="/DailyLeaderboard">
+                                                    Daily Leaderboard
+                                                </Link>
+                                            </button>
+                                        </div>
+                                        }
+                                    </td>
+                                    <td>
+                                        {this.state.user &&
+                                        <div id="Weekly Leaderboard" className="signinrequired">
+                                            <button id="weeklyleader">
+                                                <NavLink to="/WeeklyLeaderboard">
+                                                    Weekly Leaderboard
+                                                </NavLink>
+                                            </button>
+                                        </div>
+                                        }
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            { this.state.user &&
+                            <div id="googlebtncontainer" className="signinrequired">
+                                <button id="googlebtn" onClick={ (e) => this.handleSignOut()}>Sign Out</button>
+                            </div>
+                            }
+                            { this.state.user &&
+                            <div id="userinfo" className="signinrequired">
+                                <img id="pfp" src={this.state.user.picture}></img>
+                                <h3 id="name">{this.state.user.name}</h3>
+                            </div>
+                            }
+                        </div>
+                    </div>
                 </BrowserRouter>
 
                 <form onSubmit={this.createUser}>
@@ -115,17 +190,7 @@ class App extends Component {
                     <input type="submit" value="Add Test User" />
                 </form>
 
-                { this.state.user &&
-                <div id="googlebtncontainer" className="signinrequired">
-                    <button id="googlebtn" onClick={ (e) => this.handleSignOut()}>Sign Out</button>
-                </div>
-                }
-                { this.state.user &&
-                <div id="userinfo" className="signinrequired">
-                    <img id="pfp" src={this.state.user.picture}></img>
-                    <h3 id="name">{this.state.user.name}</h3>
-                </div>
-                }
+
 
             </div>
 

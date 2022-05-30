@@ -11,6 +11,9 @@ const Layout = () => {
                     <li>
                         <Link to="/WeeklyLeaderboard">Weekly Leaderboard</Link>
                     </li>
+                    <li>
+                        <Link to="/SudokuGrid">Sudoku Grid</Link>
+                    </li>
 
                 </ul>
             </nav>

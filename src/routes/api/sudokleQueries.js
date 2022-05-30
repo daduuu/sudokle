@@ -58,6 +58,12 @@ module.exports.register = async server => {
 
         method: "GET",
         path: "/api/sudokleQueries/getWeeklyLeaderboardInfo",
+        config: {
+            state: {
+                parse: false, // parse and store in request.state
+                failAction: 'ignore' // may also be 'ignore' or 'log'
+            }
+        },
 
         handler: function (request, h) {
             try {
