@@ -92,10 +92,6 @@ class SudokuGrid extends React.Component {
           <div className="game-board">
             <Grid/>
           </div>
-          <div className="game-info">
-            <div>{/* status */}</div>
-            <ol>{/* TODO */}</ol>
-          </div>
         </div>
       );
     }

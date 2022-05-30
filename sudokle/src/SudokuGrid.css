@@ -4,8 +4,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    /* display: flex;
-    flex-direction: row; */
+    background-color: #282c34;
+    height: 100vh;
+  }
+  .game-board{
+    position: relative;
   }
   
   ol, ul {
@@ -21,14 +24,17 @@
   .status {
     margin-bottom: 4vh;
     text-align: center;
-
+    color: white;
+    font-size: 4vh;
   }
   
-  .game-info {
-    margin-left: 20px;
+  :root {
+    --grid-color: white;
+    --grid-back: black;
+    --grid-input: white;
   }
   .one{
-    background: #fff;
+    background: var(--grid-back);
     border: 1px solid #999;
     float: left;
     font-size: 2em;
@@ -40,23 +46,24 @@
     padding: 0;
     text-align: center;
     width: 2em;
-    z-index: 5;
+    /* z-index: 5; */
     caret-color: transparent;
+    color: var(--grid-input);
   }
   .top{
-      border-top-color: black !important;
+      border-top-color: var(--grid-color) !important;
       border-top-width: 0.6vh;
   }
   .bot{
-    border-bottom-color: black !important;
+    border-bottom-color:  var(--grid-color) !important;
     border-bottom-width: 0.6vh;
   }
   .lside{
-    border-left-color: black !important;
+    border-left-color:  var(--grid-color) !important;
     border-left-width: 0.6vh;
   }
   .rside{
-    border-right-color: black !important;
+    border-right-color:  var(--grid-color) !important;
     border-right-width: 0.6vh;
   }
   .given{

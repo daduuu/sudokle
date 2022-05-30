@@ -152,6 +152,18 @@ class App extends Component {
 									
 								}
 								</th>
+								<th>
+								{this.state.user &&
+									<div id="Weekly Leaderboard" className="signinrequired">
+										<button id="weeklyleader">
+											<NavLink to="/Play">
+												Play
+											</NavLink>  
+										</button>
+									</div>
+									
+								}
+								</th>
 							</table>
 								{ this.state.user && 
 									<div id="googlebtncontainer" className="signinrequired">
@@ -170,6 +182,7 @@ class App extends Component {
 						<Route index element={<Home/>} />
 						<Route path="DailyLeaderboard" element={<DailyLeaderBoard/>} />
 						<Route path="WeeklyLeaderboard" element={<WeeklyLeaderboard/>} />
+						<Route path="Play" element={<SudokuGrid/>} />
 					</Routes>
 				</div>
 		);
