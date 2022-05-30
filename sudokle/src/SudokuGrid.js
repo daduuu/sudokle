@@ -124,14 +124,17 @@ class Grid extends React.Component {
             this.startTimer();
         }
         //let the input field change only if it's being changed to a number 0-9
-        const re = /[1-9]/;
+        const re = /[1-9\b]/;
         //const back = /[\b]/;
         const index = parseInt(event.target.name);
-        const input = event.target.value.trim();
+        let input = event.target.value.trim();
         let validSpot = (this.state.valSpots[index]);
         //console.log(this.state.valSpots[index]);
         //console.log(this.state.given[1]);
         if((re.test(input) || input==="") && validSpot){
+            if(input === ""){
+                input = " ";
+            }
             const squares = this.state.squares.slice();
             const given = this.state.given.slice().substring(0, index) + input + this.state.given.slice().substring(index + 1);
             squares[index] = input;
