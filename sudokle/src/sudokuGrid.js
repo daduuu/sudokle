@@ -31,8 +31,7 @@ class Grid extends React.Component {
     getInputValue = (event)=>{
       //let the input field change only if it's being changed to a number 0-9
       const re = /^[1-9\b]$/;
-      //const back = /""/;
-      //const re = /^[^a-zA-z!@#$%^&*()_=+`~]$/;
+      //const back = /[\b]/;
       const index = parseInt(event.target.name);
       const input = event.target.value;
       let validSpot = (this.state.given[index] === null);
@@ -61,7 +60,7 @@ class Grid extends React.Component {
             'rside': c%(numSquares)===(numSquares-1),
             'given': this.state.given[c] != null,
         });
-        row.push(<input type="text" className={liClasses} name={c} value={this.state.given[c]} onChange={this.getInputValue} />);
+        row.push(<input type="text" autocomplete="off" className={liClasses} name={c} value={this.state.given[c]} onChange={this.getInputValue} />);
       }
       return row;
     }
