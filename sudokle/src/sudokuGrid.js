@@ -30,14 +30,14 @@ class Grid extends React.Component {
 
     getInputValue = (event)=>{
       //let the input field change only if it's being changed to a number 0-9
-      const re = /^[0-9]$/;
+      const re = /^[1-9\b]$/;
       //const back = /""/;
       //const re = /^[^a-zA-z!@#$%^&*()_=+`~]$/;
       const index = parseInt(event.target.name);
       const input = event.target.value;
       let validSpot = (this.state.given[index] === null);
       //console.log(this.state.given[1]);
-      if(re.test(input) && validSpot){
+      if((re.test(input) || input==="") && validSpot){
         const squares = this.state.squares.slice();
         squares[index] = input;
         this.setState({squares: squares,
