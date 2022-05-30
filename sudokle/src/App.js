@@ -10,6 +10,7 @@ import Layout from "./Layout";
 import Home from "./Home";
 import WeeklyLeaderboard from "./WeeklyLeaderboard";
 import DailyLeaderBoard from "./DailyLeaderBoard";
+import SudokuGrid from "./SudokuGrid";
 
 class App extends Component {
 	constructor(props){
