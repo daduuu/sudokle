@@ -6,6 +6,9 @@ const Layout = () => {
             <nav>
                 <ul>
                     <li>
+                        <Link to="/">Home</Link>
+                    </li>
+                    <li>
                         <Link to="/DailyLeaderBoard">Daily Leaderboard</Link>
                     </li>
                     <li>

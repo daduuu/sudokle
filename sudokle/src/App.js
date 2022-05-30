@@ -30,7 +30,6 @@ class App extends Component {
             ...this.state,
             user: userObject,
         });
-        this.props.parentCallback(this.state.user);
         //after signing in, hide the sign in button and show the other features
         document.getElementById("signInDiv").hidden = true;
         var list = document.getElementsByClassName("signinrequired");
