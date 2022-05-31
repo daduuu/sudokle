@@ -69,3 +69,9 @@ ol, ul {
 .given{
     background-color: greenyellow !important;
 }
+
+.timer{
+    text-align: center;
+    font-size: large;
+    color: white;
+}

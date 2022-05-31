@@ -1,3 +1,4 @@
-SELECT userId, userEmail, averageTimeSolvedWeek
+SELECT userId, userEmail, puzzlesSolved, averageTimeSolvedWeek
 FROM users
-ORDER BY averageTimeSolvedWeek
+WHERE puzzlesSolved >= 1
+ORDER BY puzzlesSolved DESC, averageTimeSolvedWeek

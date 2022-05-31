@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './SudokuGrid.css';
 import classNames from 'classnames'
 import {makePuzzle, pluck, printPuzzle} from "./sudoku";
+import {Navigate} from 'react-router-dom';
 
 class Grid extends React.Component {
     constructor(props){
@@ -18,7 +19,8 @@ class Grid extends React.Component {
                 m: 0,
                 s: 0
             },
-            seconds: 0
+            seconds: 0,
+            userEmail: ""
         };
         this.timer = 0;
         this.startTimer = this.startTimer.bind(this);
@@ -119,6 +121,24 @@ class Grid extends React.Component {
         }
     }
 
+    handleSolved = async() => {
+        try{
+            let res = await fetch('/api/sudokleQueries/updateUser', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    dailyPuzzleTimedSolved: this.state.seconds,
+                    averageTimeSolvedWeek: this.state.seconds,
+                    userEmail: this.state.userEmail
+                }),
+            });
+        }
+        catch (e) {
+            console.log(e);
+        }
+
+    }
+
     getInputValue = (event)=>{
         if(this.state.seconds === 0){
             this.startTimer();
@@ -137,6 +157,7 @@ class Grid extends React.Component {
             }
             const squares = this.state.squares.slice();
             const given = this.state.given.slice().substring(0, index) + input + this.state.given.slice().substring(index + 1);
+            //const given = this.state.sol;
             squares[index] = input;
             this.setState({
                 valSpots: this.state.valSpots,
@@ -146,7 +167,13 @@ class Grid extends React.Component {
                 given: given
             });
             if(given === this.state.sol){
-                console.log("Solved!!");
+                this.setState({
+                    solved: true
+                });
+                this.handleSolved()
+                    .then(res => {
+                        console.log("Solved!!");
+                    });
             }
         }
         else{
@@ -183,15 +210,25 @@ class Grid extends React.Component {
     render() {
         let status = 'Now Playing - Sudokle';
 
-        return (
-            <div>
-                <div className="status">{status}</div>
-                {this.renderGrid()}
-                <div className="timer">
-                    <p>m: {this.state.time.m} s: {this.state.time.s}</p>
+        if(this.state.solved){
+            return(
+                <Navigate to="/Splash" state={{
+                    minutes: this.state.time.m,
+                    seconds: this.state.time.s}}/>
+            );
+        }
+        else{
+            return (
+                <div>
+                    <div className="status">{status}</div>
+                    {this.renderGrid()}
+                    <div className="timer">
+                        <p>m: {this.state.time.m} s: {this.state.time.s}</p>
+                    </div>
                 </div>
-            </div>
-        );
+            );
+        }
+
     }
 }
 

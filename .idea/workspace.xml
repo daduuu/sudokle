@@ -3,20 +3,33 @@
   <component name="ChangeListManager">
     <list default="true" id="67af0b21-39b3-4b24-a2dd-953b5d029f79" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/sudokleQueries/getWeeklyLeaderboardInfo.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/sudokleQueries/getWeeklyLeaderboardInfo.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/api/sudokleQueries.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/api/sudokleQueries.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sudokle/node_modules/.cache/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/sudokle/node_modules/.cache/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sudokle/node_modules/.cache/default-development/0.pack" beforeDir="false" afterPath="$PROJECT_DIR$/sudokle/node_modules/.cache/default-development/0.pack" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sudokle/node_modules/.cache/default-development/1.pack" beforeDir="false" afterPath="$PROJECT_DIR$/sudokle/node_modules/.cache/default-development/1.pack" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sudokle/node_modules/.cache/default-development/10.pack" beforeDir="false" afterPath="$PROJECT_DIR$/sudokle/node_modules/.cache/default-development/10.pack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sudokle/node_modules/.cache/default-development/11.pack" beforeDir="false" afterPath="$PROJECT_DIR$/sudokle/node_modules/.cache/default-development/11.pack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sudokle/node_modules/.cache/default-development/12.pack" beforeDir="false" afterPath="$PROJECT_DIR$/sudokle/node_modules/.cache/default-development/12.pack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sudokle/node_modules/.cache/default-development/13.pack" beforeDir="false" afterPath="$PROJECT_DIR$/sudokle/node_modules/.cache/default-development/13.pack" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sudokle/node_modules/.cache/default-development/2.pack" beforeDir="false" afterPath="$PROJECT_DIR$/sudokle/node_modules/.cache/default-development/2.pack" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sudokle/node_modules/.cache/default-development/3.pack" beforeDir="false" afterPath="$PROJECT_DIR$/sudokle/node_modules/.cache/default-development/3.pack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sudokle/node_modules/.cache/default-development/4.pack" beforeDir="false" afterPath="$PROJECT_DIR$/sudokle/node_modules/.cache/default-development/4.pack" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sudokle/node_modules/.cache/default-development/5.pack" beforeDir="false" afterPath="$PROJECT_DIR$/sudokle/node_modules/.cache/default-development/5.pack" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sudokle/node_modules/.cache/default-development/6.pack" beforeDir="false" afterPath="$PROJECT_DIR$/sudokle/node_modules/.cache/default-development/6.pack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sudokle/node_modules/.cache/default-development/7.pack" beforeDir="false" afterPath="$PROJECT_DIR$/sudokle/node_modules/.cache/default-development/7.pack" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sudokle/node_modules/.cache/default-development/8.pack" beforeDir="false" afterPath="$PROJECT_DIR$/sudokle/node_modules/.cache/default-development/8.pack" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sudokle/node_modules/.cache/default-development/index.pack" beforeDir="false" afterPath="$PROJECT_DIR$/sudokle/node_modules/.cache/default-development/index.pack" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sudokle/node_modules/.cache/default-development/index.pack.old" beforeDir="false" afterPath="$PROJECT_DIR$/sudokle/node_modules/.cache/default-development/index.pack.old" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sudokle/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/sudokle/node_modules/.package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sudokle/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/sudokle/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sudokle/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/sudokle/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sudokle/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/sudokle/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sudokle/src/Layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/sudokle/src/Layout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sudokle/src/SudokuGrid.css" beforeDir="false" afterPath="$PROJECT_DIR$/sudokle/src/SudokuGrid.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sudokle/src/SudokuGrid.js" beforeDir="false" afterPath="$PROJECT_DIR$/sudokle/src/SudokuGrid.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sudokle/src/WeeklyLeaderboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/sudokle/src/WeeklyLeaderboard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sudokle/src/sudoku.js" beforeDir="false" afterPath="$PROJECT_DIR$/sudokle/src/sudoku.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,7 +104,7 @@
       <workItem from="1653448468379" duration="5994000" />
       <workItem from="1653863141977" duration="2885000" />
       <workItem from="1653866360106" duration="3106000" />
-      <workItem from="1653873888357" duration="16340000" />
+      <workItem from="1653873888357" duration="23270000" />
     </task>
     <servers />
   </component>
@@ -107,6 +120,10 @@
       <screen x="0" y="25" width="2048" height="1255" />
     </state>
     <state x="1144" y="303" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.25.2048.1255@0.25.2048.1255" timestamp="1653913458257" />
+    <state x="662" y="401" width="670" height="676" key="search.everywhere.popup" timestamp="1653959412702">
+      <screen x="0" y="25" width="2048" height="1255" />
+    </state>
+    <state x="662" y="401" width="670" height="676" key="search.everywhere.popup/0.25.2048.1255@0.25.2048.1255" timestamp="1653959412702" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

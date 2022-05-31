@@ -27,7 +27,7 @@ class WeeklyLeaderboard extends Component {
     const rows = [];
     var count = 1;
     for(const user of this.state.leaderBoardData){
-      rows.push(<tr key={user.userID}><td>Rank: {count}</td><td>{user.userEmail}</td><td>{user.averageTimeSolvedWeek}</td></tr>)
+      rows.push(<tr key={user.userID}><td>Rank: {count}</td><td>{user.userEmail}</td><td>{user.puzzlesSolved}</td><td>{user.averageTimeSolvedWeek}</td></tr>)
       count++;
     }
     return rows;
@@ -45,6 +45,7 @@ class WeeklyLeaderboard extends Component {
                     <tr>
                       <th>Rank</th>
                       <th>Email</th>
+                      <th>Puzzles Solved</th>
                       <th>Weekly Average Time Solve</th>
                     </tr>
                   </thead>

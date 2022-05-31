@@ -1,12 +1,13 @@
+
 function randomChoice(choices){
     return choices[Math.floor(Math.random() * choices.length)];
 }
 
-export function range(n){
+function range(n){
     return Array.from(Array(n).keys());
 }
 
-export function makePuzzle(){
+function makePuzzle(){
     while(true){
         try{
             const puzzle  = Array.from(Array(9).keys()).map(() => Array.from(Array(9).keys()));
@@ -39,7 +40,7 @@ export function makePuzzle(){
 
 export function printPuzzle(){
     var puzzle = makePuzzle();
-    var board = pluck(puzzle, 30);
+    var board = pluck(puzzle, 80);
     var string = "";
     var sol = "";
     for (let i = 0; i < 9; i++){
@@ -85,14 +86,14 @@ function canBeA(puzzle, i, j, c){
     return true;
 }
 
-export function isPeer(a,b){
+function isPeer(a,b){
     if(!a || !b) return false;
     const squareA = ((Math.floor(a.x/3))*3) + Math.floor(a.y/3);
     const squareB = ((Math.floor(b.x/3))*3) + Math.floor(b.y/3);
     return a.x === b.x || a.y === b.y || squareA === squareB;
 }
 
-export function pluck(allCells, n = 0){
+function pluck(allCells, n = 0){
     const puzzle = JSON.parse(JSON.stringify(allCells));
 
     const cells = new Set(Array.from(Array(81).keys()));
@@ -132,3 +133,25 @@ export function pluck(allCells, n = 0){
     }
     return puzzle;
 }
+
+function getCreationDate(){
+    const date = new Date();
+    return (date.getMonth() + 1) + "/" + date.getDate() + "/" + date.getFullYear();
+}
+
+async function addPuzzle(){
+    const {puzzle, board, string, sol} = printPuzzle();
+    fetch("/api/SudokleQueries/addSudoku", {
+        method: "POST",
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({
+            puzzle: puzzle,
+            solution: sol,
+            creationDate: getCreationDate()
+        })
+    }).then(res => {
+        console.log("Request complete! response:", res);
+    });
+}
+
+addPuzzle();
