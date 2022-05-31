@@ -16,7 +16,9 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
-
+a{
+  font-family: Poppins;
+}
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -37,7 +39,7 @@
   transform: translateY(-50%);
 }
 .App-header h1{
-  letter-spacing: 0.7rem;
+  letter-spacing: 0.5rem;
 }
 button{
   transition: 0.15s ease-in-out;
@@ -69,6 +71,10 @@ button:hover{
 #googlebtn div{
   display: flex;
   align-items: center;
+}
+
+#title{
+  margin-bottom: 2vh;
 }
 
 #links, #linksR{
@@ -104,8 +110,8 @@ button:hover{
   color:white;
 }
 #playbtn{
-  padding: 1em;
-  font-size: calc(10px + vmin);
+  padding: 1em 1.5em;
+  font-size: 15px;
   border-radius: 1vmin;
   width: auto;
   text-align: center;
@@ -163,6 +169,9 @@ button:hover{
   margin-top: 0;
 }
 
+#signincontainer{
+  max-width: 35vw;
+}
 
 
 .App-link {

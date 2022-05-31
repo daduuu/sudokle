@@ -1,6 +1,6 @@
 .game {
     font: 14px "Century Gothic", Futura, sans-serif;
-    margin: 20px;
+    /* margin: 20px; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -24,12 +24,12 @@ ol, ul {
 .status {
     margin-bottom: 4vh;
     text-align: center;
-    color: white;
+    color: rgb(255, 255, 255);
     font-size: 4vh;
 }
 
 :root {
-    --grid-color: white;
+    --grid-color: rgb(141, 140, 140);
     --grid-back: black;
     --grid-input: white;
 }
@@ -71,6 +71,7 @@ ol, ul {
 }
 
 .timer{
+    margin-top: 5vh;
     text-align: center;
     font-size: large;
     color: white;
