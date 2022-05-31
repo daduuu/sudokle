@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Link} from "react-router-dom";
 import {useLocation} from "react-router";
+import {Button, Container} from "react-bootstrap"
 
 const Splash = () =>{
 
@@ -16,11 +17,14 @@ const Splash = () =>{
 
                 </tr>
                 <tr>
-                    <button id="leadButton">
-                        <Link to="/DailyLeaderboard">
-                            Check out your leaderboard standings!
-                        </Link>
-                    </button>
+                    <Container>
+                        <Button id="leadButtona" size="lg">
+                            <Link to="/DailyLeaderboard" id="leadButton">
+                                Check out your leaderboard standings!
+                            </Link>
+                        </Button>
+                    </Container>
+
                 </tr>
                 </thead>
             </table>

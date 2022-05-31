@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./Layout";
 import Home from "./Home"
 import WeeklyLeaderboard from "./WeeklyLeaderboard";
+import {Container, Row, Col} from "react-bootstrap";
 
 
 class DailyLeaderBoard extends Component {
@@ -32,11 +33,30 @@ class DailyLeaderBoard extends Component {
     const rows = [];
     var count = 1;
     for(const user of this.state.leaderBoardData){
-      rows.push(<tr key={user.userID}><td>Rank: {count}</td><td>{user.userEmail}</td><td>{user.dailyPuzzleTimedSolved}</td></tr>)
+      const temp = this.secondsToTime(user.dailyPuzzleTimedSolved);
+      rows.push(<Row key={user.userID}><Col>Rank: {count}</Col><Col>{user.userEmail}</Col><Col>{temp.m} M {temp.s} S</Col></Row>);
       count++;
     }
     return rows;
   }
+
+  secondsToTime(secs){
+    let hours = Math.floor(secs / (60 * 60));
+
+    let dm = secs % (60 * 60);
+    let minutes = Math.floor(dm / 60);
+
+    let ds = dm % 60;
+    let seconds = Math.ceil(ds);
+
+    let obj = {
+      h: hours,
+      m: minutes,
+      s: seconds
+    };
+    return obj;
+  }
+
 
   render() {
     const rows = this.getRows();
@@ -46,18 +66,16 @@ class DailyLeaderBoard extends Component {
           <header className="App-header">
 
             <h1>Daily Leaderboard</h1>
-                <table>
-                  <thead>
-                    <tr>
-                      <th>Rank</th>
-                      <th>Email</th>
-                      <th>Daily Time Solve</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {rows}
-                  </tbody>
-                </table>
+
+            <Container>
+              <Row>
+                <Col>Rank</Col>
+                <Col>Email</Col>
+                <Col>Daily Time Solved</Col>
+              </Row>
+              {rows}
+            </Container>
+
           </header>
         </div>
     );

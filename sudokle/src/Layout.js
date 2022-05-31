@@ -1,6 +1,7 @@
 import { Outlet, Link } from "react-router-dom";
 import React, {Component} from "react";
 import jwt_decode from "jwt-decode";
+import {Navbar, NavLink, Container, Nav, Button} from "react-bootstrap";
 
 class Layout extends Component {
     constructor(props) {
@@ -60,65 +61,33 @@ class Layout extends Component {
             { theme: "", size: ""}
         );
 
-        google.accounts.id.prompt();
+        //google.accounts.id.prompt();
     }
     render(){
-        return (
+
+        return(
             <>
-                <nav>
-                    <ul>
-                        <table>
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        <button>
-                                        <Link to="/">Home</Link>
-                                        </button>
-                                    </td>
-                                    <td>
-                                        <button>
-                                        <Link to="/DailyLeaderBoard">Daily Leaderboard</Link>
-                                        </button>
-                                    </td>
-                                    <td>
-                                        <button>
-                                        <Link to="/WeeklyLeaderboard">Weekly Leaderboard</Link>
-                                        </button>
-                                    </td>
-                                    <td>
-                                        <button>
-                                        <Link to="/SudokuGrid">Play</Link>
-                                        </button>
-                                    </td>
-                                    <td>
-                                        <div className="App">
-                                            <div id="navBar">
-                                                <div id="signInDiv"></div>
-                                                { this.state.user &&
-                                                <div id="googlebtncontainer" className="signinrequired">
-                                                    <button id="googlebtn" onClick={ (e) => this.handleSignOut()}>Sign Out</button>
-                                                </div>
-                                                }
-                                                { this.state.user &&
-                                                <div id="userinfo" className="signinrequired">
-                                                    <img id="pfp" src={this.state.user.picture}></img>
-                                                    <h3 id="name">{this.state.user.name}</h3>
-                                                </div>
-                                                }
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
+            <Navbar bg="dark" variant="dark">
+                <Container>
+                    <Navbar.Brand as={Link} to="/">Sudokle</Navbar.Brand>
+                    <Nav className="me-auto">
+                        <Nav.Link as={Link} to="/">Home</Nav.Link>
+                        <Nav.Link as={Link} to="/DailyLeaderBoard">DailyLeaderBoard</Nav.Link>
+                        <Nav.Link as={Link} to="/WeeklyLeaderboard">Weekly Leaderboard</Nav.Link>
+                        <Nav.Link as={Link} to="/SudokuGrid">Play!</Nav.Link>
 
-                    </ul>
+                    </Nav>
+                </Container>
+                <Nav>
+                    <Container>
+                    <Button id="ssignInDiv" className="justify-content-end">Sign in</Button>
+                    </Container>
+                </Nav>
 
-                </nav>
-
-                <Outlet />
+            </Navbar>
+            <Outlet />
             </>
-        )
+        );
     }
 
 };

@@ -100,12 +100,25 @@ button:hover{
 #weeklyleader{
   left: 28vw;
 }
+#playLink{
+  color:white;
+}
 #playbtn{
   padding: 1em;
   font-size: calc(10px + vmin);
   border-radius: 1vmin;
-  width: 9vh;
+  width: auto;
   text-align: center;
+}
+#leadButton{
+  text-align: center;
+  color:white;
+}
+#leadButtona{
+  width: 100%;
+  height: 30%;
+  justifyContent: 'center';
+  alignItems: 'center';
 }
 #navBar, #navBar2{
   position: relative;

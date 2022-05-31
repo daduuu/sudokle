@@ -25,7 +25,7 @@ class App extends Component {
     }
     handleClick(){
         const timeFinished = !this.state.timeFinished? new Date().getTime() : this.state.timeFinished;
-        const timeTaken = (timeFinished-this.state.timeStarted)/1000
+        const timeTaken = (timeFinished-this.state.timeStarted)/1000;
         let bestTime = this.state.bestTime;
         if(bestTime.length > 1){
             if(timeFinished < this.state.bestTime[1])
@@ -68,7 +68,6 @@ class App extends Component {
     render() {
         return (
             <div>
-
                 <BrowserRouter>
                     <div id={"navBar2"}>
                         <Routes id={"linksR"}>
@@ -84,9 +83,6 @@ class App extends Component {
 
                     </div>
                 </BrowserRouter>
-
-
-
             </div>
 
         );

@@ -140,9 +140,6 @@ class Grid extends React.Component {
     }
 
     getInputValue = (event)=>{
-        if(this.state.seconds === 0){
-            this.startTimer();
-        }
         //let the input field change only if it's being changed to a number 0-9
         const re = /^[1-9\b]$/;
         //const back = /[\b]/;
@@ -209,6 +206,9 @@ class Grid extends React.Component {
 
     render() {
         let status = 'Now Playing - Sudokle';
+        if(this.state.seconds === 0){
+            this.startTimer();
+        }
 
         if(this.state.solved){
             return(
