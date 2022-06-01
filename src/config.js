@@ -7,6 +7,7 @@ dotenv.config();
 
 const {
     PORT,
+    HOST,
     HOST_URL,
     SQL_SERVER,
     SQL_PORT,
@@ -28,6 +29,7 @@ assert( SQL_PASSWORD, "SQL_PASSWORD configuration is required." );
 
 module.exports = {
     port: PORT,
+    host: HOST,
     url: HOST_URL,
     sql: {
         server: SQL_SERVER,
