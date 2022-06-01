@@ -18,13 +18,22 @@ class SignIn extends Component {
       }
       this.handleChange= this.handleChange.bind(this);
       this.handleSubmit = this.handleSubmit.bind(this);
+      this.handlePChange = this.handlePChange.bind(this);
   }
 
   handleChange(event){
+
       this.setState({
           email: event.target.value
       });
   }
+
+  handlePChange(event){
+      this.setState({
+          password: event.target.value
+      });
+  }
+
 
   handleSubmit(event){
       if(this.state.email == ''){
@@ -54,7 +63,7 @@ class SignIn extends Component {
                   <input type="text" value={this.state.email} onChange={this.handleChange}/>
                   <br></br>
                   Password:
-                  <input type="text" value={this.state.password} onChange={this.handleChange}/>
+                  <input type="text" value={this.state.password} onChange={this.handlePChange}/>
                   <br></br>
                   <input type="submit" value="Submit"/>
                 </form>
