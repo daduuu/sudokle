@@ -14,7 +14,7 @@ module.exports.register = async server => {
         method:"GET",
         path:"/",
         handler: async (request, h) => {
-            return h.view("./sudokle/src/DailyLeaderBoard.js");
+            return 'hello world'
         }
     });
 /*

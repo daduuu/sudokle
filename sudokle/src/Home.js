@@ -1,20 +1,27 @@
 import React from 'react';
- 
-const home = () => {
+import {Link} from "react-router-dom";
+import {Button} from "react-bootstrap";
+
+const Home = () => {
     return (
-      <header className="App-header">
-        <h1 id="title">Sudokle</h1>
-        <table>
-          <thead>
-            <tr>
-              <button id="playbtn">
-                Play
-              </button>
-            </tr>
-          </thead>
-        </table>
-      </header>
+        <header className="App-header">
+            <h1 id="title">Sudokle</h1>
+            <div>
+                <table>
+                    <thead>
+                    <tr>
+                        <Button id="playbtn">
+                            <Link to="/SudokuGrid" id="playLink">
+                                Play!
+                            </Link>
+                        </Button>
+                    </tr>
+                    </thead>
+                </table>
+            </div>
+
+        </header>
     );
 }
- 
-export default home;
+
+export default Home;
