@@ -23,7 +23,8 @@ const ShowSignIn = () => (
 const ShowSignOut = () => (
     <Nav id="rightnavbar">
         <Container id="signincontainer">
-\        <button onClick={SignOut}>Sign Out</button>
+        <p id="email">Hi {EMAIL}</p>
+      <button onClick={SignOut}>Sign Out</button>
        </Container>
     </Nav>
 );

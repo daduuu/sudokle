@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Link} from "react-router-dom";
+import {Link, Navigate} from "react-router-dom";
 
 import './App.css';
 import {Container, Row, Col, Button} from "react-bootstrap";
@@ -134,21 +134,21 @@ class SignUp extends Component {
           </header>
     );
     
-    ShowHomeButton = () => (
-        <header className="App-header">
-          <h1>Welcome {EMAIL}</h1>
-        <Button id="playbtn">
-              <Link to="/" id="playLink">
-                  Go back Home
-              </Link>
-        </Button>
-        </header>
-    );
+    // ShowHomeButton = () => (
+    //     <header className="App-header">
+    //       <h1>Welcome {EMAIL}</h1>
+    //     <Button id="playbtn">
+    //           <Link to="/" id="playLink">
+    //               Go back Home
+    //           </Link>
+    //     </Button>
+    //     </header>
+    // );
 
   render() {
     return (
         <div className="App">
-          {LOGIN ? <this.ShowHomeButton /> : <this.ShowSignUp /> }
+          {LOGIN ? <Navigate to="/"/> : <this.ShowSignUp /> }
         </div>
     );
   }

@@ -98,16 +98,16 @@ class SignIn extends Component {
     </header>
 );
 
-ShowHomeButton = () => (
-    <header className="App-header">
-      <h1>Hi {EMAIL}</h1>
-    <Button id="playbtn">
-          <Link to="/" id="playLink">
-              Go back Home
-          </Link>
-    </Button>
-    </header>
-);
+// ShowHomeButton = () => (
+//     <header className="App-header">
+//       <h1>Hi {EMAIL}</h1>
+//     <Button id="playbtn">
+//           <Link to="/" id="playLink">
+//               Go back Home
+//           </Link>
+//     </Button>
+//     </header>
+// );
   fetchUsers = async () => {
     const response = await fetch('/api/sudokleQueries/getUsers');
     const body = response.json();
@@ -127,7 +127,7 @@ ShowHomeButton = () => (
   render() {
     return (
       <div className="App">
-      {LOGIN ? <this.ShowHomeButton/> : <this.ShowSignIn/>}
+      {LOGIN ? <Navigate to="/"/> : <this.ShowSignIn/>}
       </div>
     );
   }
