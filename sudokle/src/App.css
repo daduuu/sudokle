@@ -231,6 +231,9 @@ input::-webkit-input-placeholder {
 #rightnavbar{
 	
 }
+#email{
+  color:white;
+}
 
 @keyframes App-logo-spin {
   from {
