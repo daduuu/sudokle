@@ -1,11 +1,11 @@
-#Sudokle
-###Created by: [David Du](https://github.com/daduuu), [Elliot Lin](https://github.com/Falcons-Royale), [Adarsh Chilkunda](https://github.com/adroyalz), [Vikram Chilkunda](https://github.com/VikramChilkunda)
+# Sudokle
+### Created by: [David Du](https://github.com/daduuu), [Elliot Lin](https://github.com/Falcons-Royale), [Adarsh Chilkunda](https://github.com/adroyalz), [Vikram Chilkunda](https://github.com/VikramChilkunda)
 
-##Description
+## Description
 The web app Sudokle is daily sudoku game. Based off the popular game Wordle, Sudoku puzzles
 are generated for players to solve. Players are timed once they start the puzzles, and once completed, their time is added to the leaderboards, both daily and lifetime leaderboards.
 
-##How to run the app
+## How to run the app
 
 First download the app and change into the directory like so
 
@@ -15,6 +15,7 @@ cd sudokle
 ```
 Then run the following command
 ```bash 
+npm init
 npm install
 npm run dev
 ```
@@ -25,14 +26,14 @@ http://localhost:3000
 ```
 Now have run playing!
 
-##Technologies
+## Technologies
 - React.js
 - Node.js
 - Hapi
 - MySQL
 - HTML/CSS
 
-####SQL Server Hosting
+#### SQL Server Hosting
 We used https://remotemysql.com to remotely host our sql database
 
 ## Functionalities 
@@ -41,9 +42,4 @@ We used https://remotemysql.com to remotely host our sql database
 - User Resgistration/Login
 - Leaderboard displays user data
     - Can sort lifetime leaderboard by time solved or puzzles solved
-
-
-    
-
-
-
+- User information updates everytime puzzles is solved
