@@ -5,7 +5,7 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./Layout";
 import Home from "./Home"
-import WeeklyLeaderboard from "./WeeklyLeaderboard";
+import LifeTimeLeaderboard from "./LifeTimeLeaderboard";
 import {Container, Row, Col} from "react-bootstrap";
 
 

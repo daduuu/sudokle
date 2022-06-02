@@ -129,7 +129,7 @@ class Grid extends React.Component {
                 body: JSON.stringify({
                     dailyPuzzleTimedSolved: this.state.seconds,
                     averageTimeSolvedWeek: this.state.seconds,
-                    userEmail: this.state.userEmail
+                    userEmail: "test@test"
                 }),
             });
         }

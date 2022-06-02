@@ -134,7 +134,7 @@ function pluck(allCells, n = 0){
     return puzzle;
 }
 
-function getCreationDate(){
+export function getCreationDate(){
     const date = new Date();
     return (date.getMonth() + 1) + "/" + date.getDate() + "/" + date.getFullYear();
 }
@@ -153,5 +153,3 @@ async function addPuzzle(){
         console.log("Request complete! response:", res);
     });
 }
-
-addPuzzle();

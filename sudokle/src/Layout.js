@@ -25,7 +25,7 @@ class Layout extends Component {
                     <Nav className="me-auto">
                         <Nav.Link as={Link} to="/">Home</Nav.Link>
                         <Nav.Link as={Link} to="/DailyLeaderBoard">DailyLeaderBoard</Nav.Link>
-                        <Nav.Link as={Link} to="/WeeklyLeaderboard">Weekly Leaderboard</Nav.Link>
+                        <Nav.Link as={Link} to="/LifeTimeLeaderboard">LifeTime Leaderboard</Nav.Link>
                         <Nav.Link as={Link} to="/SudokuGrid">Play!</Nav.Link>
 
                     </Nav>
