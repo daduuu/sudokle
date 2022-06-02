@@ -2,6 +2,31 @@ import { Outlet, Link, useNavigate } from "react-router-dom";
 import React, {Component} from "react";
 import jwt_decode from "jwt-decode";
 import {Navbar, NavLink, Container, Nav, Button} from "react-bootstrap";
+import {LOGIN, EMAIL, setEMAIL, setLOGIN} from "./globals";
+
+
+function SignOut(){
+    setEMAIL("");
+    setLOGIN(false);
+    alert("You have signed out")
+}
+
+const ShowSignIn = () => (
+    <Nav id="rightnavbar">
+        <Container id="signincontainer">
+            <Nav.Link as={Link} to="/SignIn">Sign in</Nav.Link>
+            <Nav.Link as={Link} to="/SignUp">Sign up</Nav.Link>
+        </Container>
+    </Nav>
+);
+
+const ShowSignOut = () => (
+    <Nav id="rightnavbar">
+        <Container id="signincontainer">
+        <button onClick={SignOut}>Sign Out</button>
+       </Container>
+    </Nav>
+);
 
 
 class Layout extends Component {
@@ -14,6 +39,12 @@ class Layout extends Component {
             timeTaken: 0,
         };
 
+    }
+    componentDidMount() {
+        this.interval = setInterval(() => this.setState({ }), 1000);
+    }
+    componentWillUnmount() {
+        clearInterval(this.interval);
     }
     
     render(){
@@ -30,12 +61,7 @@ class Layout extends Component {
 
                     </Nav>
                 </Container >
-                <Nav id="rightnavbar">
-                    <Container id="signincontainer">
-                        <Nav.Link as={Link} to="/SignIn">Sign in</Nav.Link>
-                        <Nav.Link as={Link} to="/SignUp">Sign up</Nav.Link>
-                    </Container>
-                </Nav>
+                {LOGIN ? <ShowSignOut /> : <ShowSignIn />}
 
             </Navbar>
             <Outlet />

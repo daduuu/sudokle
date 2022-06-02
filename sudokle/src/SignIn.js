@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
 import {Container, Row, Col} from "react-bootstrap";
+import Layout from "./Layout";
 import {setEMAIL, setLOGIN} from './globals'
+
 
 
 class SignIn extends Component {
