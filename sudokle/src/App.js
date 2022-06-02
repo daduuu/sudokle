@@ -8,6 +8,7 @@ import DailyLeaderBoard from "./DailyLeaderBoard";
 import SudokuGrid from "./SudokuGrid";
 import SignIn from "./SignIn";
 import Splash from "./Splash";
+import SignUp from "./SignUp";
 import {printPuzzle} from "./sudoku";
 
 
@@ -74,6 +75,7 @@ class App extends Component {
                         <Routes id={"linksR"}>
                             <Route path="/" element={<Layout/>}>
                                 <Route index element={<Home/>} />
+                                <Route path="SignUp" element={<SignUp/>}/>
                                 <Route path="SignIn" element={<SignIn/>}/>
                                 <Route path="DailyLeaderboard" element={<DailyLeaderBoard/>} />
                                 <Route path="WeeklyLeaderboard" element={<WeeklyLeaderboard/>} />

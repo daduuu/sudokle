@@ -33,6 +33,7 @@ class Layout extends Component {
                 <Nav>
                     <Container id="signincontainer">
                         <Nav.Link as={Link} to="/SignIn">Sign in</Nav.Link>
+                        <Nav.Link as={Link} to="/SignUp">Sign up</Nav.Link>
                     </Container>
                 </Nav>
 
