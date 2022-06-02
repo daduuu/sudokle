@@ -66,7 +66,7 @@ class SignIn extends Component {
                     </div>
                     <div id="pwdinput">
                       <p>Password:</p>
-                      <input type="text" value={this.state.password} onChange={this.handleChange}/>
+                      <input type="password" value={this.state.password} onChange={this.handlePChange}/>
                       <br></br>
                     </div>
                     <input id="submitbtn" type="submit" value="Submit"/>
