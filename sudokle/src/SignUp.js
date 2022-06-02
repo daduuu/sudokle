@@ -43,6 +43,7 @@ class SignUp extends Component {
 
 
   handleSubmit(event){
+        event.preventDefault();
       if(this.state.email == ''){
           alert('Email input required')
       }
@@ -54,11 +55,28 @@ class SignUp extends Component {
       }
       else{
         alert('A email was submitted: ' + this.state.email);
+        this.createUser(event);
       }
       
-      event.preventDefault();
+      
   }
 
+  createUser = async(event) => {
+    event.preventDefault();
+    try{
+        let res = await fetch('/api/sudokleQueries/addUser', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                userEmail: this.state.email,
+                pass: this.state.password
+            }),
+        });
+    }
+    catch (e) {
+        console.log(e);
+    }
+    };
 
   render() {
     return (
