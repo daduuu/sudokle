@@ -49,15 +49,21 @@ class SignIn extends Component {
 
             <h1>Sign In</h1>
             <Container>
-              <form onSubmit={this.handleSubmit}>
-                  Email:
-                  <input type="text" value={this.state.email} onChange={this.handleChange}/>
-                  <br></br>
-                  Password:
-                  <input type="text" value={this.state.password} onChange={this.handleChange}/>
-                  <br></br>
-                  <input type="submit" value="Submit"/>
-                </form>
+              <div id="loginform">
+                <form onSubmit={this.handleSubmit}>
+                    <div id="emailinput">
+                      <p>Email:</p>
+                      <input type="text" value={this.state.email} onChange={this.handleChange} placeholder="example@gmail.com"/>
+                      <br></br>
+                    </div>
+                    <div id="pwdinput">
+                      <p>Password:</p>
+                      <input type="text" value={this.state.password} onChange={this.handleChange}/>
+                      <br></br>
+                    </div>
+                    <input id="submitbtn" type="submit" value="Submit"/>
+                  </form>
+                </div>
               
             </Container>
 
