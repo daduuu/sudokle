@@ -51,7 +51,6 @@ class SignIn extends Component {
 
 
   render() {
-    console.log("hi");
     return (
         <div className="App">
           <header className="App-header">
@@ -63,7 +62,7 @@ class SignIn extends Component {
                   <input type="text" value={this.state.email} onChange={this.handleChange}/>
                   <br></br>
                   Password:
-                  <input type="text" value={this.state.password} onChange={this.handlePChange}/>
+                  <input type="password" value={this.state.password} onChange={this.handlePChange}/>
                   <br></br>
                   <input type="submit" value="Submit"/>
                 </form>
