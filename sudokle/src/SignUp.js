@@ -1,12 +1,7 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
-import ReactDOM from "react-dom/client";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Layout from "./Layout";
-import Home from "./Home"
-import WeeklyLeaderboard from "./WeeklyLeaderboard";
 import {Container, Row, Col} from "react-bootstrap";
+import {setEMAIL, setLOGIN} from './globals';
 
 
 class SignUp extends Component {
@@ -56,6 +51,8 @@ class SignUp extends Component {
       else{
         alert('A email was submitted: ' + this.state.email);
         this.createUser(event);
+        setEMAIL(this.state.email);
+        setLOGIN(true);
       }
       
       
