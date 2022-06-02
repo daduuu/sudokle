@@ -67,7 +67,7 @@ class DailyLeaderBoard extends Component {
 
             <h1>Daily Leaderboard</h1>
 
-            <Container>
+            <Container id="leaderboard">
               <Row>
                 <Col>Rank</Col>
                 <Col>Email</Col>

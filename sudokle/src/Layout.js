@@ -20,7 +20,7 @@ class Layout extends Component {
         return(
             <>
             <Navbar bg="dark" variant="dark">
-                <Container>
+                <Container id="leftnavbar">
                     <Navbar.Brand as={Link} to="/">Sudokle</Navbar.Brand>
                     <Nav className="me-auto">
                         <Nav.Link as={Link} to="/">Home</Nav.Link>
@@ -29,8 +29,8 @@ class Layout extends Component {
                         <Nav.Link as={Link} to="/SudokuGrid">Play!</Nav.Link>
 
                     </Nav>
-                </Container>
-                <Nav>
+                </Container >
+                <Nav id="rightnavbar">
                     <Container id="signincontainer">
                         <Nav.Link as={Link} to="/SignIn">Sign in</Nav.Link>
                         <Nav.Link as={Link} to="/SignUp">Sign up</Nav.Link>
