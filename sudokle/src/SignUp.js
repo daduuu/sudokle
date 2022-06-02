@@ -67,18 +67,20 @@ class SignUp extends Component {
 
             <h1>Sign Up</h1>
             <Container>
-              <form onSubmit={this.handleSubmit}>
-                  Email:
-                  <input type="text" value={this.state.email} onChange={this.handleChange}/>
-                  <br></br>
-                  Password:
-                  <input type="password" value={this.state.password} onChange={this.handlePChange}/>
-                  <br></br>
-                  Confirm Password:
-                  <input type="password" value={this.state.confirm} onChange={this.handleCChange}/>
-                  <br></br>
-                  <input type="submit" value="Submit"/>
-                </form>
+                <div id="loginform">
+                    <form onSubmit={this.handleSubmit}>
+                        <p>Email:</p>
+                        <input type="text" value={this.state.email} onChange={this.handleChange} placeholder="example@gmail.com"/>
+                        <br></br>
+                        <p>Password:</p>
+                        <input type="password" value={this.state.password} onChange={this.handlePChange}/>
+                        <br></br>
+                        <p>Confirm Password:</p>
+                        <input type="password" value={this.state.confirm} onChange={this.handleCChange}/>
+                        <br></br>
+                        <input id="submitbtn" type="submit" value="Submit"/>
+                    </form>
+                </div>
               
             </Container>
 
