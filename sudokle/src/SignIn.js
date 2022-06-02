@@ -1,12 +1,7 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
-import ReactDOM from "react-dom/client";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Layout from "./Layout";
-import Home from "./Home"
-import WeeklyLeaderboard from "./WeeklyLeaderboard";
 import {Container, Row, Col} from "react-bootstrap";
+import {setEMAIL, setLOGIN} from './globals'
 
 
 class SignIn extends Component {
@@ -15,6 +10,7 @@ class SignIn extends Component {
       this.state = {
           email: '',
           password: '',
+          users: [],
       }
       this.handleChange= this.handleChange.bind(this);
       this.handleSubmit = this.handleSubmit.bind(this);
@@ -36,6 +32,7 @@ class SignIn extends Component {
 
 
   handleSubmit(event){
+    event.preventDefault();
       if(this.state.email == ''){
           alert('Email input required')
       }
@@ -44,12 +41,45 @@ class SignIn extends Component {
       }
       else{
         alert('A email was submitted: ' + this.state.email);
+        this.setState({
+            users: this.handleSort(),
+        })
+        const found = this.state.users.some(element =>{
+            if(element.userEmail == this.state.email){
+                if(element.pass == this.state.password){
+                    return true;
+                }
+            }
+            return false;
+        });
+        if(found){
+            setEMAIL(this.state.email);
+            setLOGIN(true);
+            alert('logged in');
+        }
+        else{
+            alert('Incorrect email or password');
+        }
       }
       
-      event.preventDefault();
+      
   }
+  fetchUsers = async () => {
+    const response = await fetch('/api/sudokleQueries/getUsers');
+    const body = response.json();
+    return body;
+  };
 
-
+  handleSort = async () =>{
+    console.log("hi");
+    this.fetchUsers()
+        .then(res => this.setState(
+            {
+              users:res
+            }
+        ))
+        .catch(err => console.log(err));
+}
   render() {
     return (
         <div className="App">
