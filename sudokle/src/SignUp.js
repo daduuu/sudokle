@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
+import {Link} from "react-router-dom";
+
 import './App.css';
-import {Container, Row, Col} from "react-bootstrap";
-import {setEMAIL, setLOGIN} from './globals';
+import {Container, Row, Col, Button} from "react-bootstrap";
+import {EMAIL, LOGIN, setEMAIL, setLOGIN} from './globals';
 
 
 class SignUp extends Component {
@@ -11,13 +13,19 @@ class SignUp extends Component {
           email: '',
           password: '',
           confirm: '',
+          users: this.handleSort(),
       }
       this.handleChange= this.handleChange.bind(this);
       this.handleSubmit = this.handleSubmit.bind(this);
       this.handlePChange = this.handlePChange.bind(this);
       this.handleCChange = this.handleCChange.bind(this);
   }
-
+  componentDidMount() {
+    this.interval = setInterval(() => this.setState({ }), 1000);
+  }
+  componentWillUnmount() {
+    clearInterval(this.interval);
+  }
   handleChange(event){
 
       this.setState({
@@ -49,10 +57,21 @@ class SignUp extends Component {
           alert('Confirm password does not match Password')
       }
       else{
-        alert('A email was submitted: ' + this.state.email);
-        this.createUser(event);
-        setEMAIL(this.state.email);
-        setLOGIN(true);
+        const found = this.state.users.some(element =>{
+            if(element.userEmail == this.state.email){
+                return true;
+            }
+            return false;
+        });
+        if(found){
+            alert('Email is already in use');
+        }
+        else{
+            this.createUser(event);
+            setEMAIL(this.state.email);
+            setLOGIN(true);
+        }
+        
       }
       
       
@@ -74,11 +93,24 @@ class SignUp extends Component {
         console.log(e);
     }
     };
-
-  render() {
-    return (
-        <div className="App">
-          <header className="App-header">
+    fetchUsers = async () => {
+        const response = await fetch('/api/sudokleQueries/getUsers');
+        const body = response.json();
+        return body;
+      };
+    
+      handleSort = async () =>{
+        console.log("hi");
+        this.fetchUsers()
+            .then(res => this.setState(
+                {
+                  users:res
+                }
+            ))
+            .catch(err => console.log(err));
+    }
+    ShowSignUp = () => (
+        <header className="App-header">
 
             <h1>Sign Up</h1>
             <Container>
@@ -100,6 +132,23 @@ class SignUp extends Component {
             </Container>
 
           </header>
+    );
+    
+    ShowHomeButton = () => (
+        <header className="App-header">
+          <h1>Welcome {EMAIL}</h1>
+        <Button id="playbtn">
+              <Link to="/" id="playLink">
+                  Go back Home
+              </Link>
+        </Button>
+        </header>
+    );
+
+  render() {
+    return (
+        <div className="App">
+          {LOGIN ? <this.ShowHomeButton /> : <this.ShowSignUp /> }
         </div>
     );
   }

@@ -1,4 +1,4 @@
-import { Outlet, Link, useNavigate } from "react-router-dom";
+import { Outlet, Link, useNavigate, Redirect} from "react-router-dom";
 import React, {Component} from "react";
 import jwt_decode from "jwt-decode";
 import {Navbar, NavLink, Container, Nav, Button} from "react-bootstrap";
@@ -23,7 +23,7 @@ const ShowSignIn = () => (
 const ShowSignOut = () => (
     <Nav id="rightnavbar">
         <Container id="signincontainer">
-        <button onClick={SignOut}>Sign Out</button>
+\        <button onClick={SignOut}>Sign Out</button>
        </Container>
     </Nav>
 );
@@ -48,7 +48,7 @@ class Layout extends Component {
     }
     
     render(){
-        return(
+       return(
             <>
             <Navbar bg="dark" variant="dark">
                 <Container id="leftnavbar">
