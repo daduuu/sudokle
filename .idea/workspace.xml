@@ -3,12 +3,19 @@
   <component name="ChangeListManager">
     <list default="true" id="67af0b21-39b3-4b24-a2dd-953b5d029f79" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sudokle/node_modules/.cache/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/sudokle/node_modules/.cache/.eslintcache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sudokle/node_modules/.cache/default-development/0.pack" beforeDir="false" afterPath="$PROJECT_DIR$/sudokle/node_modules/.cache/default-development/0.pack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sudokle/node_modules/.cache/default-development/11.pack" beforeDir="false" afterPath="$PROJECT_DIR$/sudokle/node_modules/.cache/default-development/11.pack" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sudokle/node_modules/.cache/default-development/2.pack" beforeDir="false" afterPath="$PROJECT_DIR$/sudokle/node_modules/.cache/default-development/2.pack" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sudokle/node_modules/.cache/default-development/4.pack" beforeDir="false" afterPath="$PROJECT_DIR$/sudokle/node_modules/.cache/default-development/4.pack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sudokle/node_modules/.cache/default-development/5.pack" beforeDir="false" afterPath="$PROJECT_DIR$/sudokle/node_modules/.cache/default-development/5.pack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sudokle/node_modules/.cache/default-development/8.pack" beforeDir="false" afterPath="$PROJECT_DIR$/sudokle/node_modules/.cache/default-development/8.pack" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sudokle/node_modules/.cache/default-development/index.pack" beforeDir="false" afterPath="$PROJECT_DIR$/sudokle/node_modules/.cache/default-development/index.pack" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sudokle/node_modules/.cache/default-development/index.pack.old" beforeDir="false" afterPath="$PROJECT_DIR$/sudokle/node_modules/.cache/default-development/index.pack.old" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sudokle/src/SudokuGrid.css" beforeDir="false" afterPath="$PROJECT_DIR$/sudokle/src/SudokuGrid.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sudokle/src/Layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/sudokle/src/Layout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sudokle/src/SignIn.js" beforeDir="false" afterPath="$PROJECT_DIR$/sudokle/src/SignIn.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sudokle/src/Splash.js" beforeDir="false" afterPath="$PROJECT_DIR$/sudokle/src/Splash.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,7 +45,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/data/sudokleQueries" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -91,6 +98,7 @@
       <workItem from="1654111522133" duration="362000" />
       <workItem from="1654118554119" duration="288000" />
       <workItem from="1654129811008" duration="4228000" />
+      <workItem from="1654237044588" duration="793000" />
     </task>
     <servers />
   </component>

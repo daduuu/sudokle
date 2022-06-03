@@ -93,8 +93,6 @@ class SignIn extends Component {
             alert('Incorrect email or password');
         }
       }
-      
-      
   }
   ShowSignIn = () => (
     <header className="App-header">

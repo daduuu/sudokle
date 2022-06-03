@@ -2,13 +2,14 @@ import { Outlet, Link, useNavigate, Redirect} from "react-router-dom";
 import React, {Component} from "react";
 import jwt_decode from "jwt-decode";
 import {Navbar, NavLink, Container, Nav, Button} from "react-bootstrap";
-import {LOGIN, EMAIL, setEMAIL, setLOGIN} from "./globals";
+import {LOGIN, EMAIL, setEMAIL, setLOGIN, setSOLVED} from "./globals";
 
 
 function SignOut(){
     setEMAIL("");
     setLOGIN(false);
-    alert("You have signed out")
+    setSOLVED(false);
+    alert("You have signed out");
 }
 
 const ShowSignIn = () => (
