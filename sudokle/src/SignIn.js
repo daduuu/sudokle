@@ -3,7 +3,7 @@ import { Outlet, Link, Navigate, Route} from "react-router-dom";
 import './App.css';
 import {Container, Row, Col, Button} from "react-bootstrap";
 import Layout from "./Layout";
-import {EMAIL, LOGIN,setEMAIL, setLOGIN} from './globals';
+import {EMAIL, LOGIN,setEMAIL, setLOGIN, SOLVED, setSOLVED, setTIME} from './globals';
 
 
 
@@ -24,6 +24,14 @@ class SignIn extends Component {
 
   componentDidMount() {
     this.interval = setInterval(() => this.setState({ }), 1000);
+    console.log("hi");
+    this.fetchUsers()
+        .then(res => this.setState(
+            {
+              users:res
+            }
+        ))
+        .catch(err => console.log(err));
   }
   componentWillUnmount() {
     clearInterval(this.interval);
@@ -61,7 +69,23 @@ class SignIn extends Component {
             }
             return false;
         });
+        const solved = this.state.users.some(element =>{
+          if(element.userEmail == this.state.email){
+          if(element.dailyPuzzleSolved.data[0] == 1){
+              return true;
+          }
+        }
+          return false;
+      });
+      const time = this.state.users.some(element =>{
+        if(element.userEmail == this.state.email){
+              return element.dailyPuzzleTimedSolved;
+        }
+        return 0;
+    });
         if(found){
+            setTIME(time);
+            setSOLVED(solved);
             setEMAIL(this.state.email);
             setLOGIN(true);
         }

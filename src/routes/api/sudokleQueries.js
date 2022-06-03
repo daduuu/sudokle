@@ -392,11 +392,12 @@ module.exports.register = async server => {
                 });
                 console.log(request.payload);
 
-                const {dailyTimedSolved, averageTimeSolvedWeek, userEmail} = request.payload;
+                const {dailyPuzzleTimedSolved, averageTimeSolvedWeek, userEmail} = request.payload;
 
                 return new Promise((resolve, reject) => {
-                    connection.query(sqlQueries.updateUser, [dailyTimedSolved, averageTimeSolvedWeek, userEmail], function (error, results, fields) {
+                    connection.query(sqlQueries.updateUser, [dailyPuzzleTimedSolved, averageTimeSolvedWeek, userEmail], function (error, results, fields) {
                         if (error) {
+                            console.log(error);
                             return reject(error)
                         }
 

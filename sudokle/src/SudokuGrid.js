@@ -4,6 +4,7 @@ import './SudokuGrid.css';
 import classNames from 'classnames'
 import {makePuzzle, pluck, printPuzzle} from "./sudoku";
 import {Navigate} from 'react-router-dom';
+import {EMAIL, LOGIN, setSOLVED, setTIME, SOLVED, TIME} from './globals'
 
 class Grid extends React.Component {
     constructor(props){
@@ -13,14 +14,10 @@ class Grid extends React.Component {
             given: "",
             valSpots: [],
             sol: "",
-            solved: false,
-            time: {
-                h: 0,
-                m: 0,
-                s: 0
-            },
+            solved: SOLVED,
+            time: this.secondsToTime(TIME),
             seconds: 0,
-            userEmail: ""
+            userEmail: EMAIL,
         };
         this.timer = 0;
         this.startTimer = this.startTimer.bind(this);
@@ -45,6 +42,7 @@ class Grid extends React.Component {
     }
 
     startTimer() {
+        
         if (this.timer === 0) {
             this.timer = setInterval(this.countUp, 1000);
         }
@@ -61,7 +59,6 @@ class Grid extends React.Component {
     }
 
     componentDidMount() {
-
         this.fetchData()
             .then(res => {
 
@@ -88,12 +85,8 @@ class Grid extends React.Component {
                     given: puzzles,
                     valSpots: val,
                     sol: solution,
-                    solved: false,
-                    time: {
-                        h: 0,
-                        m: 0,
-                        s: 0
-                    }
+                    solved: SOLVED,
+                    time: this.secondsToTime(TIME)
                 });
 
 
@@ -123,15 +116,15 @@ class Grid extends React.Component {
 
     handleSolved = async() => {
         try{
-            let res = await fetch('/api/sudokleQueries/updateUser', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    dailyPuzzleTimedSolved: this.state.seconds,
-                    averageTimeSolvedWeek: this.state.seconds,
-                    userEmail: "test@test"
-                }),
-            });
+                let res = await fetch('/api/sudokleQueries/updateUser', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        dailyPuzzleTimedSolved: this.state.seconds,
+                        averageTimeSolvedWeek: this.state.seconds,
+                        userEmail: this.state.userEmail
+                    }),
+                });
         }
         catch (e) {
             console.log(e);
@@ -167,6 +160,8 @@ class Grid extends React.Component {
                 this.setState({
                     solved: true
                 });
+                setTIME(this.state.seconds);
+                setSOLVED(true);
                 this.handleSolved()
                     .then(res => {
                         console.log("Solved!!");
@@ -205,6 +200,7 @@ class Grid extends React.Component {
     }
 
     render() {
+        console.log(SOLVED);
         let status = 'Now Playing - Sudokle';
         if(this.state.seconds === 0){
             this.startTimer();
