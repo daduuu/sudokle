@@ -177,14 +177,14 @@ class Grid extends React.Component {
     renderRow(i){
         const row = [];
         let numSquares = 9;
-        for(let c=i; c<i+9; c++){
+        for(let c=i; c<i+9; c++){  
             var liClasses = classNames({
                 'one': true,
                 'top': i===0 || i===3*numSquares || i===6*numSquares,
                 'bot': i===(numSquares-1)*numSquares,
                 'lside': c===0 || c%numSquares===0 || c%numSquares===3 || c%numSquares===6,
                 'rside': c%(numSquares)===(numSquares-1),
-                'given': this.state.given[c] != null,
+                'given': !this.state.valSpots[c],
             });
             row.push(<input type="text" autocomplete="off" className={liClasses} name={c} value={this.state.given[c]} onChange={this.getInputValue} />);
         }
