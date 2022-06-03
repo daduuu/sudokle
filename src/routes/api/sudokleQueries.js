@@ -196,6 +196,56 @@ module.exports.register = async server => {
 
     });
 
+
+    server.route({
+
+        method: "GET",
+        path: "/api/sudokleQueries/resetDailyUser",
+        config: {
+            state: {
+                parse: false, // parse and store in request.state
+                failAction: 'ignore' // may also be 'ignore' or 'log'
+            }
+        },
+
+        handler: function (request, h) {
+            try {
+                const connection = sql.createConnection({
+                    host: config.sql.server,
+                    port: config.sql.port,
+                    user: config.sql.user,
+                    password: config.sql.password,
+                    database: config.sql.user
+                });
+
+                connection.on('error', function (err) {
+                    console.log(err);
+                });
+
+
+                return new Promise((resolve, reject) => {
+                    connection.query(sqlQueries.resetDailyUser, function (error, results, fields) {
+                        if (error) {
+                            console.log(error);
+                            return reject(error)
+                        }
+
+                        console.log(results);
+
+                        return resolve(results);
+                    });
+                    connection.end();
+
+                });
+
+            } catch (err) {
+                console.log(err);
+            }
+
+        }
+
+    });
+
     server.route({
 
         method: "GET",

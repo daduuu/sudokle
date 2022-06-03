@@ -27,7 +27,10 @@ class App extends Component {
 
         if(today.getHours() === 10){
             this.addPuzzle();
+            this.resetUsers();
         }
+        //this.addPuzzle();
+        //this.resetUsers();
 
         this.handleChange = this.handleChange.bind(this);
     }
@@ -57,16 +60,10 @@ class App extends Component {
     }
 
 
-    createUser = async(event) => {
-        event.preventDefault();
+    resetUsers = async() => {
         try{
-            let res = await fetch('/api/sudokleQueries/addUser', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    userEmail: this.state.value
-                }),
-            });
+            const response = await fetch('/api/sudokleQueries/resetDailyUser')
+            .then(res => console.log(res));
         }
         catch (e) {
             console.log(e);
