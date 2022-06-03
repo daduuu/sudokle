@@ -41,6 +41,15 @@ a{
   left: 2vh;
   transform: translateY(-50%);
 }
+#signout{
+  background-color: rgb(33, 37, 41);
+  border: none;
+  color: rgba(255,255,255,.55);
+  font-family: Poppins;
+}
+#signout:hover{
+  transform: scale(1);
+}
 .App-header h1{
   letter-spacing: 0.5rem;
   font-size: calc(10px + 5vmin);
@@ -189,10 +198,10 @@ button:hover{
 #loginform input{
 	margin-bottom: 2vh;
 	border-radius: 2vh;
-	padding: 3vh 3vh 3vh 3vh;
-	height: 7vh;
-	font-size: 2vh;
-	width: 30vw;
+	padding: 2.5vh 2vh 2.5vh 2vh;
+	height: 5vh;
+	font-size: 1.5vh;
+	width: 20vw;
 	text-align: center;
 }
 input::-webkit-input-placeholder {
@@ -225,15 +234,20 @@ input::-webkit-input-placeholder {
 	background-color: rgb(94, 126, 185);
 	color: #282c34;
 }
-#leftnavbar{
-
-}
-#rightnavbar{
-	
-}
 #email{
-  color:white;
+  color: rgba(255, 255, 255, 0.55);
+  font-family: Poppins;
+  animation: toast 0s ease-in 5s;
+  -webkit-animation: toast 0s ease-in 5s;
+  animation-fill-mode: forwards;
+  position: absolute;
+  top: 2vh;
+  right: 2vw;
+  padding: 2vh;
+  background-color: #0c5c22;
+  border-radius: 1vh;
 }
+
 
 @keyframes App-logo-spin {
   from {
@@ -242,4 +256,14 @@ input::-webkit-input-placeholder {
   to {
     transform: rotate(360deg);
   }
+}
+@keyframes toast{
+  0%   {opacity: 1;}
+  90%  {opacity: 1;}
+  100% {opacity: 0;}
+}
+@-webkit-keyframes toast {
+  0%   {opacity: 1;}
+  90%  {opacity: 1;}
+  100% {opacity: 0;}
 }

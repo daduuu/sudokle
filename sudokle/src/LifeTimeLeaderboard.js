@@ -87,7 +87,7 @@ class LifeTimeLeaderboard extends Component {
         <div className="App">
           <header className="App-header">
             <h1>LifeTime Leaderboard</h1>
-            <Container>
+            <Container id="leaderboard">
               <Row>
                 <Col sm={2}>Rank</Col>
                 <Col sm={3}>Email</Col>
