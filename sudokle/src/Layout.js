@@ -23,9 +23,9 @@ const ShowSignIn = () => (
 const ShowSignOut = () => (
     <Nav id="rightnavbar">
         <Container id="signincontainer">
-        <p id="email">Hi {EMAIL}</p>
-      <button onClick={SignOut}>Sign Out</button>
-       </Container>
+            <p id="email">Welcome, {EMAIL}</p>
+            <button class="nav-link" onClick={SignOut} id="signout">Sign Out</button>
+        </Container>
     </Nav>
 );
 
@@ -63,10 +63,10 @@ class Layout extends Component {
                     </Nav>
                 </Container >
                 {LOGIN ? <ShowSignOut /> : <ShowSignIn />}
-
             </Navbar>
             <Outlet />
             </>
+            
         );
     }
 

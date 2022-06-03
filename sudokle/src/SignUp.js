@@ -22,6 +22,14 @@ class SignUp extends Component {
   }
   componentDidMount() {
     this.interval = setInterval(() => this.setState({ }), 1000);
+    console.log("hi");
+        this.fetchUsers()
+            .then(res => this.setState(
+                {
+                  users:res
+                }
+            ))
+            .catch(err => console.log(err));
   }
   componentWillUnmount() {
     clearInterval(this.interval);
@@ -46,6 +54,7 @@ class SignUp extends Component {
 
 
   handleSubmit(event){
+      console.log(this.state.users)
         event.preventDefault();
       if(this.state.email == ''){
           alert('Email input required')
