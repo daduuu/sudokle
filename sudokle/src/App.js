@@ -25,7 +25,7 @@ class App extends Component {
 
         var today = new Date();
 
-        if(today.getHours() === 10){
+        if(today.getHours() === 10 && today.getSeconds() === 0 && today.getMinutes() === 0){
             this.addPuzzle();
             this.resetUsers();
         }
