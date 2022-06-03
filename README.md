@@ -9,6 +9,8 @@ are generated for players to solve. Players are timed once they start the puzzle
 
 First download the latest version of NodeJS
 
+Clear your browser cookies.
+
 Then download the app and change into the directory like so
 
 ```bash
