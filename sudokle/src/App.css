@@ -89,7 +89,10 @@ button:hover{
 #title{
   margin-bottom: 2vh;
 }
-
+#leftnavbar{
+  width: 60%;
+  margin-left: 2vw;
+}
 #links, #linksR{
   position: absolute;
   top: 50%;
