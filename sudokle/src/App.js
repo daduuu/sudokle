@@ -29,6 +29,7 @@ class App extends Component {
             this.addPuzzle();
             this.resetUsers();
         }
+       // this.addPuzzle();
         //this.addPuzzle();
         //this.resetUsers();
 

@@ -40,7 +40,7 @@ function makePuzzle(){
 
 export function printPuzzle(){
     var puzzle = makePuzzle();
-    var board = pluck(puzzle, 76);
+    var board = pluck(puzzle, 60);
     var string = "";
     var sol = "";
     for (let i = 0; i < 9; i++){
