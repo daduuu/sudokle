@@ -7,7 +7,9 @@ are generated for players to solve. Players are timed once they start the puzzle
 
 ## How to run the app
 
-First download the app and change into the directory like so
+First download the latest version of NodeJS
+
+Then download the app and change into the directory like so
 
 ```bash
 git clone https://github.com/daduuu/sudokle
