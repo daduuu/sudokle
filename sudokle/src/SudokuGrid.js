@@ -219,7 +219,7 @@ class Grid extends React.Component {
                     <div className="status">{status}</div>
                     {this.renderGrid()}
                     <div className="timer">
-                        <p>{this.state.time.m} : {this.state.time.s}</p>
+                        <p> Minutes: {this.state.time.m} :  Seconds: {this.state.time.s}</p>
                     </div>
                 </div>
             );
