@@ -3,7 +3,7 @@ import {Link, Navigate} from "react-router-dom";
 
 import './App.css';
 import {Container, Row, Col, Button} from "react-bootstrap";
-import {EMAIL, LOGIN, setEMAIL, setLOGIN} from './globals';
+import {EMAIL, LOGIN, setEMAIL, setLOGIN, setSOLVED, setTIME} from './globals';
 
 
 class SignUp extends Component {
@@ -22,6 +22,14 @@ class SignUp extends Component {
   }
   componentDidMount() {
     this.interval = setInterval(() => this.setState({ }), 1000);
+    console.log("hi");
+    this.fetchUsers()
+        .then(res => this.setState(
+            {
+              users:res
+            }
+        ))
+        .catch(err => console.log(err));
   }
   componentWillUnmount() {
     clearInterval(this.interval);
@@ -67,9 +75,11 @@ class SignUp extends Component {
             alert('Email is already in use');
         }
         else{
-            this.createUser(event);
+            this.createUser();
             setEMAIL(this.state.email);
             setLOGIN(true);
+            setSOLVED(false);
+            setTIME(0);
         }
         
       }
@@ -77,8 +87,7 @@ class SignUp extends Component {
       
   }
 
-  createUser = async(event) => {
-    event.preventDefault();
+  createUser = async() => {
     try{
         let res = await fetch('/api/sudokleQueries/addUser', {
             method: 'POST',
